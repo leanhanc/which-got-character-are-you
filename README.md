@@ -1,3 +1,3 @@
-<h1> ¿Quién sos en Game of Trhones? <h2>
+<h1> ¿Quién sos en Game of Thrones? <h2>
 
 Test hecho con React.
