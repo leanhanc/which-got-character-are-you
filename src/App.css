@@ -3,7 +3,7 @@ html {
   background: #0a0a0a
 }
 
-body{
+body {
   font-family: 'Inconsolata', monospace;
   letter-spacing: 1.4px;
 }
@@ -20,17 +20,17 @@ p {
   
 }
 
-.a{
+.a {
   color: gray;
   
 }
 
-@font-face{
+@font-face {
   font-family: 'Cinzel';
   src: url(./fonts/CinzelRegular.ttf);
 }
 
-@font-face{
+@font-face {
   font-family: 'Got';
   src: url(./fonts/Got.ttf);
 
@@ -39,7 +39,7 @@ p {
 
 .gotFont {
   font-family: 'GOT';
-  color:whitesmoke
+  color:whitesmoke;
 }
 
 .Cinzel{
