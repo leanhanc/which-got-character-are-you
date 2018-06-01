@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 // Layout
 import Header from './components/views/layout/Header'
-import Question from './components/views/ui-elements/Question'
+import QuestionContainer from './components/views/layout/questionContainer'
 
 // Servicios
 import axios from 'axios'
@@ -60,7 +60,7 @@ class Root extends Component {
     return (
       <div className='container has-background-black'>
         <Header />
-        <Question
+        <QuestionContainer
           secuenceNum={this.state.secuenceNum}
           preguntas={this.state.questions}
           renderAnswer={this.state.renderAnswer}
