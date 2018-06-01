@@ -20,11 +20,13 @@ p{
 @font-face{
   font-family: 'Got';
   src: url(./fonts/Got.ttf);
+
 }
 
 
 .gotFont {
-  font-family: 'GOT'
+  font-family: 'GOT';
+  color:whitesmoke
 }
 
 .Cinzel{
