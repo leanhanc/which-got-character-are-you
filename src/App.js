@@ -60,8 +60,11 @@ class Root extends Component {
 
   computeAnswer = valueToCompute => {
     let QNum = this.state.secuenceNum
-    let PJ = PersonajeAfectado(QNum)
-    console.log(PJ)
+    let pj = PersonajeAfectado(QNum)
+    const characterScore = { ...this.state.characterScore }
+    characterScore[pj] = Number(characterScore[pj]) + Number(valueToCompute)
+    console.log(characterScore[pj])
+    this.setState({ characterScore })
     QNum = QNum + 1
     this.setState({ secuenceNum: QNum })
   }

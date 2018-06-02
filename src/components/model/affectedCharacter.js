@@ -1,18 +1,18 @@
 let afectado = QNum => {
-  switch (QNum) {
-    case 1 || 11:
+  switch (true) {
+    case QNum === 1 || QNum === 11 || QNum === 13 || QNum === 22:
       return 'TL'
 
-    case 2 || 8:
+    case QNum === 2 || QNum === 8 || QNum === 12 || QNum === 21:
       return 'DT'
 
-    case 3 || 10:
+    case QNum === 3 || QNum === 10 || QNum === 16 || QNum === 19:
       return 'CL'
 
-    case 4 || 9:
+    case QNum === 4 || QNum === 9 || QNum === 17 || QNum === 23:
       return 'PB'
 
-    case 5 || 7:
+    case QNum === 5 || QNum === 7 || QNum === 14 || QNum === 18:
       return 'SS'
 
     default:

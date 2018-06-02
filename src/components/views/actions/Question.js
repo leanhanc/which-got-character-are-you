@@ -30,6 +30,8 @@ class Question extends Component {
           <p className='has-text-centered q'> {this.props.preguntas.q4} </p>
         </div>
       )
+    } else {
+      return <div><p>Terminamos. Sos ?</p></div>
     }
   }
 }

@@ -38,6 +38,8 @@ class Answer extends Component {
           </p>
         </div>
       )
+    } else {
+      return null
     }
   }
 }
