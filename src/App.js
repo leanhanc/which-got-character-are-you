@@ -61,6 +61,7 @@ class Root extends Component {
   computeAnswer = valueToCompute => {
     let QNum = this.state.secuenceNum
     let PJ = PersonajeAfectado(QNum)
+    console.log(PJ)
     QNum = QNum + 1
     this.setState({ secuenceNum: QNum })
   }
