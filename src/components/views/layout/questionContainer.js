@@ -15,6 +15,7 @@ class questionContainer extends Component {
         <Question
           secuenceNum={this.props.secuenceNum}
           preguntas={this.props.preguntas}
+          finalPositions={this.props.finalPositions}
         />
         <Answer
           characterResponses={this.props.characterResponses}

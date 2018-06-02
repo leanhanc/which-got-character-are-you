@@ -7,6 +7,8 @@ import QuestionContainer from './components/views/layout/questionContainer'
 // Helpers
 
 import PersonajeAfectado from './components/model/affectedCharacter'
+import CalculatePositions from './components/model/calculatePositions'
+import TransformName from './components/model/transformName'
 
 // Servicios
 import axios from 'axios'
@@ -60,13 +62,22 @@ class Root extends Component {
 
   computeAnswer = valueToCompute => {
     let QNum = this.state.secuenceNum
+    // Identificar a qué personaje corresponde la pregunta
     let pj = PersonajeAfectado(QNum)
+    // Copiar la tabla de posiciones de personajes en el actual estado de la app
     const characterScore = { ...this.state.characterScore }
     characterScore[pj] = Number(characterScore[pj]) + Number(valueToCompute)
-    console.log(characterScore[pj])
+    // Actualizar la tabla de posiciones de personajes
     this.setState({ characterScore })
+    // Pasar el estado de la app a la siguiente pregunta
     QNum = QNum + 1
     this.setState({ secuenceNum: QNum })
+  }
+
+  finalPositions = () => {
+    let posiciones = { ...this.state.characterScore }
+    let posicionesFinal = CalculatePositions(posiciones)
+    return `Sos ${TransformName(posicionesFinal[5])}. También te podemos decir que estás cerca de ${TransformName(posicionesFinal[4])} y lejos de ${TransformName(posicionesFinal[0])}.`
   }
   // ! Render
 
@@ -81,6 +92,7 @@ class Root extends Component {
           characterResponses={this.state.characterResponses}
           characterScore={this.state.characterScore}
           computeAnswer={this.computeAnswer}
+          finalPositions={this.finalPositions}
         />
       </div>
     )

@@ -31,7 +31,7 @@ class Question extends Component {
         </div>
       )
     } else {
-      return <div><p>Terminamos. Sos ?</p></div>
+      return <div><p>Terminamos. {this.props.finalPositions()}</p></div>
     }
   }
 }
