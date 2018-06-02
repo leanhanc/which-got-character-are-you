@@ -4,6 +4,10 @@ import React, { Component } from 'react'
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
 
+// Helpers
+
+import PersonajeAfectado from './components/model/affectedCharacter'
+
 // Servicios
 import axios from 'axios'
 // Estilos
@@ -13,10 +17,10 @@ import './App.css'
 class Root extends Component {
   //! State
   state = {
-    secuenceNum: 0,
-    questions: {},
-    characterResponses: { cr1: {}, cr2: {}, cr3: {}, cr4: {} },
-    renderAnswer: 'cr1.a'
+    characterScore: { CL: 0, PB: 0, SS: 0, JS: 0, TL: 0, DT: 0 },
+    characterResponses: { cr_0: {}, cr_1: {}, cr_2: {}, cr_3: {} },
+    questions: [],
+    secuenceNum: 0
   }
 
   // ! Lifecyle Hooks
@@ -54,6 +58,12 @@ class Root extends Component {
       .catch(e => console.log(e))
   }
 
+  computeAnswer = valueToCompute => {
+    let QNum = this.state.secuenceNum
+    let PJ = PersonajeAfectado(QNum)
+    QNum = QNum + 1
+    this.setState({ secuenceNum: QNum })
+  }
   // ! Render
 
   render () {
@@ -65,6 +75,8 @@ class Root extends Component {
           preguntas={this.state.questions}
           renderAnswer={this.state.renderAnswer}
           characterResponses={this.state.characterResponses}
+          characterScore={this.state.characterScore}
+          computeAnswer={this.computeAnswer}
         />
       </div>
     )

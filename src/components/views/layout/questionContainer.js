@@ -4,6 +4,11 @@ import Answer from '../actions/Answer'
 import OptionButton from '../ui-elements/optionButton'
 
 class questionContainer extends Component {
+  userAnswerHandler = e => {
+    let valueToCompute = e.target.name
+    this.props.computeAnswer(valueToCompute)
+  }
+
   render () {
     return (
       <div className='container'>
@@ -13,13 +18,21 @@ class questionContainer extends Component {
         />
         <Answer
           characterResponses={this.props.characterResponses}
-          renderAnswer={this.props.renderAnswer}
+          answerNumRender={this.props.secuenceNum}
         />
         <div className='container has-text-centered m-t-32'>
-          <OptionButton>MUY EN DESACUERDO</OptionButton>
-          <OptionButton>DESACUERDO</OptionButton>
-          <OptionButton>DE ACUERDO</OptionButton>
-          <OptionButton>MUY DE ACUERDO</OptionButton>
+          <OptionButton name='-3' onClick={this.userAnswerHandler}>
+            MUY EN DESACUERDO
+          </OptionButton>
+          <OptionButton name='-1' onClick={this.userAnswerHandler}>
+            DESACUERDO
+          </OptionButton>
+          <OptionButton name='1' onClick={this.userAnswerHandler}>
+            DE ACUERDO
+          </OptionButton>
+          <OptionButton name='3' onClick={this.userAnswerHandler}>
+            MUY DE ACUERDO
+          </OptionButton>
         </div>
       </div>
     )
