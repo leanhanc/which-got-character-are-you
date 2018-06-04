@@ -5,7 +5,7 @@ const transform = name => {
     case 'SS':
       return 'Sansa Stark'
     case 'TL':
-      return 'Tyrion  Lannister'
+      return 'Tyrion Lannister'
     case 'JS':
       return 'John Snow'
     case 'CL':

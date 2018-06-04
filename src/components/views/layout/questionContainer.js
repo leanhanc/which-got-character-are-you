@@ -7,6 +7,14 @@ class questionContainer extends Component {
   userAnswerHandler = e => {
     let valueToCompute = e.target.name
     this.props.computeAnswer(valueToCompute)
+
+    // Agregar clase de fadeIn en la respuesta y removerla
+    if (this.props.secuenceNum < 23) {
+      document.querySelector('.respuesta').classList.add('fadeInUp')
+      window.setTimeout(() => {
+        document.querySelector('.respuesta').classList.remove('fadeInUp')
+      }, 1000)
+    }
   }
 
   render () {
@@ -20,6 +28,7 @@ class questionContainer extends Component {
         <Answer
           characterResponses={this.props.characterResponses}
           answerNumRender={this.props.secuenceNum}
+          startAnswerAnimation={this.props.startAnswerAnimation}
         />
         <div className='container has-text-centered m-t-32'>
           <OptionButton name='-3' onClick={this.userAnswerHandler}>

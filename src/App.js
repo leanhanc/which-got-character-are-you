@@ -15,6 +15,7 @@ import axios from 'axios'
 // Estilos
 import 'bulma/css/bulma.min.css'
 import './App.css'
+import 'animate.css/animate.min.css'
 
 class Root extends Component {
   //! State
