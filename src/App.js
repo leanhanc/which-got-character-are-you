@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // Layout
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
+import ResultModal from './components/views/layout/resultModal'
 
 // Helpers
 
@@ -22,8 +23,11 @@ class Root extends Component {
   state = {
     characterScore: { CL: 0, PB: 0, SS: 0, JS: 0, TL: 0, DT: 0 },
     characterResponses: { cr_0: {}, cr_1: {}, cr_2: {}, cr_3: {} },
+    characterProfile: { initials: '', name: '', alias: '', bio: '', dixit: '' },
     questions: [],
-    secuenceNum: 0
+    secuenceNum: 0,
+    showModal: false,
+    gameOver: false
   }
 
   // ! Lifecyle Hooks
@@ -75,9 +79,25 @@ class Root extends Component {
     this.setState({ secuenceNum: QNum })
   }
 
+  fetchCharacterProfile (personajeGanador) {
+    const mongoLab = process.env.REACT_APP_APIKEY
+    axios
+      .get(
+        `https://api.mlab.com/api/1/databases/testgot/collections/character_profile?q={"initials":"${personajeGanador}"}&apiKey=${mongoLab}`
+      )
+      .then(response => {
+        const characterProfile = response.data[0]
+        this.setState({ characterProfile })
+      })
+      .catch(e => console.log(e))
+  }
+
   finalPositions = () => {
     let posiciones = { ...this.state.characterScore }
     let posicionesFinal = CalculatePositions(posiciones)
+    this.fetchCharacterProfile(posicionesFinal[5])
+    const gameOver = { gameOver: true, showModal: true }
+    this.setState({ gameOver })
     return `Sos ${TransformName(posicionesFinal[5])}. También te podemos decir que estás cerca de ${TransformName(posicionesFinal[4])} y lejos de ${TransformName(posicionesFinal[0])}.`
   }
   // ! Render
@@ -86,15 +106,20 @@ class Root extends Component {
     return (
       <div className='container has-background-black'>
         <Header />
-        <QuestionContainer
-          secuenceNum={this.state.secuenceNum}
-          preguntas={this.state.questions}
-          renderAnswer={this.state.renderAnswer}
-          characterResponses={this.state.characterResponses}
-          characterScore={this.state.characterScore}
-          computeAnswer={this.computeAnswer}
-          finalPositions={this.finalPositions}
-        />
+        {!this.state.gameOver
+          ? <QuestionContainer
+            secuenceNum={this.state.secuenceNum}
+            preguntas={this.state.questions}
+            renderAnswer={this.state.renderAnswer}
+            characterResponses={this.state.characterResponses}
+            characterScore={this.state.characterScore}
+            computeAnswer={this.computeAnswer}
+            finalPositions={this.finalPositions}
+            />
+          : <ResultModal
+            characterProfile={this.state.characterProfile}
+            finalPositions={this.finalPositions}
+            />}
       </div>
     )
   }

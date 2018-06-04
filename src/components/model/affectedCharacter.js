@@ -12,7 +12,7 @@ let afectado = QNum => {
     case QNum === 4 || QNum === 9 || QNum === 17 || QNum === 23:
       return 'PB'
 
-    case QNum === 5 || QNum === 7 || QNum === 14 || QNum === 18:
+    case QNum === 0 || QNum === 7 || QNum === 14 || QNum === 18:
       return 'SS'
 
     default:

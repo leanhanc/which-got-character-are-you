@@ -57,7 +57,7 @@ class Question extends Component {
         </div>
       )
     } else {
-      return <div><p>Terminamos. {this.props.finalPositions()}</p></div>
+      return <div><p>{this.props.finalPositions()}</p></div>
     }
   }
 }

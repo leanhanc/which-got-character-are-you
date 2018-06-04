@@ -13,7 +13,7 @@ class questionContainer extends Component {
       document.querySelector('.respuesta').classList.add('fadeInUp')
       window.setTimeout(() => {
         document.querySelector('.respuesta').classList.remove('fadeInUp')
-      }, 1000)
+      }, 800)
     }
   }
 
