@@ -23,7 +23,14 @@ class Root extends Component {
   state = {
     characterScore: { CL: 0, PB: 0, SS: 0, JS: 0, TL: 0, DT: 0 },
     characterResponses: { cr_0: {}, cr_1: {}, cr_2: {}, cr_3: {} },
-    characterProfile: { initials: '', name: '', alias: '', bio: '', dixit: '' },
+    characterProfile: {
+      initials: '',
+      name: '',
+      alias: '',
+      bio: '',
+      dixit: '',
+      pic: ''
+    },
     questions: [],
     secuenceNum: 0,
     showModal: false,

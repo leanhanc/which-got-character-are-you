@@ -3,9 +3,16 @@ import ModalButton from '../ui-elements/modalButton'
 import FormatText from 'react-format-text'
 
 class Modal extends React.Component {
+  closeModal () {
+    document.getElementById('modal').classList.remove('is-active')
+  }
   render () {
     return (
-      <div className='modal is-active animated zoomIn' id='modalPersonaje'>
+      <div
+        className='modal is-active animated zoomIn'
+        id='modal'
+        onClick={this.closeModal}
+      >
         <div className='modal-background' />
         <div className='modal-card'>
           <header className='modal-card-head'>
@@ -15,17 +22,24 @@ class Modal extends React.Component {
             <button className='delete' aria-label='close' />
           </header>
           <section className='modal-card-body has-text-centered line-hight'>
-            <h1 className='title'>{this.props.characterProfile.name}</h1>
+            <h1 className='title has-text-weight-bold animated zoomIn'>
+              {this.props.characterProfile.name}
+            </h1>
             <h5 className='subtitle'>
               <i>{this.props.characterProfile.alias}</i>
             </h5>
+            <div id='characterPic' className='has-text-centered'>
+              <img src={`${this.props.characterProfile.pic}`} />
+            </div>
             <hr />
-            <FormatText>{this.props.characterProfile.dixit}</FormatText>
+            <i className='animated zoomIn'>
+              <FormatText>{this.props.characterProfile.dixit}</FormatText>
+            </i>
             <hr />
             <FormatText>{this.props.characterProfile.bio}</FormatText>
           </section>
           <footer className='modal-card-foot has-text-centered'>
-            <ModalButton> Continuar </ModalButton>
+            <ModalButton onClick={this.closeModal}> Continuar </ModalButton>
           </footer>
         </div>
       </div>
