@@ -9,7 +9,7 @@ class Modal extends React.Component {
   render () {
     return (
       <div
-        className='modal is-active animated zoomIn'
+        className='modal is-active animated zoomIn is-overlay'
         id='modal'
         onClick={this.closeModal}
       >
@@ -21,8 +21,8 @@ class Modal extends React.Component {
             </p>
             <button className='delete' aria-label='close' />
           </header>
-          <section className='modal-card-body has-text-centered line-hight'>
-            <h1 className='title has-text-weight-bold animated zoomIn'>
+          <section className='modal-card-body has-text-centered'>
+            <h1 className='title has-text-weight-bold'>
               {this.props.characterProfile.name}
             </h1>
             <h5 className='subtitle'>
@@ -32,9 +32,9 @@ class Modal extends React.Component {
               <img src={`${this.props.characterProfile.pic}`} />
             </div>
             <hr />
-            <i className='animated zoomIn'>
+            <div className='content'>
               <FormatText>{this.props.characterProfile.dixit}</FormatText>
-            </i>
+            </div>
             <hr />
             <FormatText>{this.props.characterProfile.bio}</FormatText>
           </section>
