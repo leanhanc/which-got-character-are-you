@@ -75,11 +75,16 @@ class Root extends Component {
     // Actualizar la tabla de posiciones de personajes
     this.setState({ characterScore })
     // Pasar el estado de la app a la siguiente pregunta
-    QNum = QNum + 1
+    QNum = ++QNum
     this.setState({ secuenceNum: QNum })
+    if (QNum === 24) {
+      this.finalPositions()
+    }
   }
 
   fetchCharacterProfile (personajeGanador) {
+    const setGameOver = { gameOver: true }
+    this.setState(setGameOver)
     const mongoLab = process.env.REACT_APP_APIKEY
     axios
       .get(
@@ -89,6 +94,10 @@ class Root extends Component {
         const characterProfile = response.data[0]
         this.setState({ characterProfile })
       })
+      .then(() => {
+        const showModal = { showModal: true }
+        this.setState(showModal)
+      })
       .catch(e => console.log(e))
   }
 
@@ -96,9 +105,8 @@ class Root extends Component {
     let posiciones = { ...this.state.characterScore }
     let posicionesFinal = CalculatePositions(posiciones)
     this.fetchCharacterProfile(posicionesFinal[5])
-    const gameOver = { gameOver: true, showModal: true }
-    this.setState({ gameOver })
-    return `Sos ${TransformName(posicionesFinal[5])}. También te podemos decir que estás cerca de ${TransformName(posicionesFinal[4])} y lejos de ${TransformName(posicionesFinal[0])}.`
+
+    // return `Sos ${TransformName(posicionesFinal[5])}. También te podemos decir que estás cerca de ${TransformName(posicionesFinal[4])} y lejos de ${TransformName(posicionesFinal[0])}.`
   }
   // ! Render
 

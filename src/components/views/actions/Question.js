@@ -18,7 +18,6 @@ class Question extends Component {
     ) {
       let get = document.getElementsByClassName('pregunta')
       get[0].classList.add('slideInLeft')
-      console.log(get)
     }
   }
   render () {
@@ -57,7 +56,7 @@ class Question extends Component {
         </div>
       )
     } else {
-      return <div><p>{this.props.finalPositions()}</p></div>
+      return null
     }
   }
 }
