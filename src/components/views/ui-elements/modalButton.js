@@ -9,9 +9,8 @@ font-weight: bolder;
 font-family: 'Inconsolata', monospace;
 letter-spacing: 2px;
 cursor: pointer;
-width: 33%;
 margin: 0 auto;
 text-align: center;
-display: inline-block;`
+display: block;`
 
 export default modalbutton

@@ -4,12 +4,12 @@ import React, { Component } from 'react'
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
 import ResultModal from './components/views/layout/resultModal'
+import PostgameContainer from './components/views/layout/postgameContainer'
 
 // Helpers
 
 import PersonajeAfectado from './components/model/affectedCharacter'
 import CalculatePositions from './components/model/calculatePositions'
-import TransformName from './components/model/transformName'
 
 // Servicios
 import axios from 'axios'
@@ -111,9 +111,10 @@ class Root extends Component {
   finalPositions = () => {
     let posiciones = { ...this.state.characterScore }
     let posicionesFinal = CalculatePositions(posiciones)
-    this.fetchCharacterProfile(posicionesFinal[5])
-
-    // return `Sos ${TransformName(posicionesFinal[5])}. También te podemos decir que estás cerca de ${TransformName(posicionesFinal[4])} y lejos de ${TransformName(posicionesFinal[0])}.`
+    if (this.state.characterProfile.name === '') {
+      this.fetchCharacterProfile(posicionesFinal[5])
+    }
+    return posicionesFinal
   }
   // ! Render
 
@@ -132,10 +133,13 @@ class Root extends Component {
             finalPositions={this.finalPositions}
             gameOver={this.gameOver}
             />
-          : <ResultModal
-            characterProfile={this.state.characterProfile}
-            finalPositions={this.finalPositions}
-            />}
+          : <div>
+            <PostgameContainer finalPositions={this.finalPositions} />
+            <ResultModal
+              characterProfile={this.state.characterProfile}
+              finalPositions={this.finalPositions}
+              />
+          </div>}
       </div>
     )
   }
