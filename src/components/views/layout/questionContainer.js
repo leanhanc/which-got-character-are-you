@@ -8,6 +8,20 @@ class questionContainer extends Component {
     let valueToCompute = e.target.name
     this.props.computeAnswer(valueToCompute)
 
+    // Agregar un delay de entrada a la primer respuesta de una pregunta nueva
+
+    if (
+      this.props.secuenceNum === 5 ||
+      this.props.secuenceNum === 11 ||
+      this.props.secuenceNum === 17
+    ) {
+      document.querySelector('.respuesta').style.display = 'none'
+      setTimeout(() => {
+        document.querySelector('.respuesta').style.display = 'block'
+        document.querySelector('.respuesta').classList.add('fadeInUp')
+      }, 1000)
+    }
+
     // Agregar clase de fadeIn en la respuesta y removerla
     if (this.props.secuenceNum < 25) {
       document.querySelector('.respuesta').classList.add('fadeInUp')
