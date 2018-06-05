@@ -1,5 +1,6 @@
 import React from 'react'
 import ModalButton from '../ui-elements/modalButton'
+import FormatText from 'react-format-text'
 
 class Modal extends React.Component {
   render () {
@@ -13,15 +14,15 @@ class Modal extends React.Component {
             </p>
             <button className='delete' aria-label='close' />
           </header>
-          <section className='modal-card-body has-text-centered'>
+          <section className='modal-card-body has-text-centered line-hight'>
             <h1 className='title'>{this.props.characterProfile.name}</h1>
             <h5 className='subtitle'>
               <i>{this.props.characterProfile.alias}</i>
             </h5>
             <hr />
-            <p>{this.props.characterProfile.dixit}</p>
+            <FormatText>{this.props.characterProfile.dixit}</FormatText>
             <hr />
-            <p>{this.props.characterProfile.bio}</p>
+            <FormatText>{this.props.characterProfile.bio}</FormatText>
           </section>
           <footer className='modal-card-foot has-text-centered'>
             <ModalButton> Continuar </ModalButton>

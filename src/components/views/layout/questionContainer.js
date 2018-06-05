@@ -11,10 +11,12 @@ class questionContainer extends Component {
     // Agregar clase de fadeIn en la respuesta y removerla
     if (this.props.secuenceNum < 25) {
       document.querySelector('.respuesta').classList.add('fadeInUp')
-      if (this.props.gameOver) {
+      if (this.props.secuenceNum < 24) {
         window.setTimeout(() => {
-          document.querySelector('.respuesta').classList.remove('fadeInUp')
-        }, 1000)
+          if (document.querySelector('.respuesta') !== null) {
+            document.querySelector('.respuesta').classList.remove('fadeInUp')
+          }
+        }, 800)
       }
     }
   }

@@ -52,7 +52,9 @@ class Question extends Component {
     if (count >= 18 && count < 24) {
       return (
         <div className='pregunta animated slideInLeft'>
-          <p className='has-text-centered q'> {this.props.preguntas.q4} </p>
+          <p className='has-text-centered q'>
+            {this.props.preguntas.q4}
+          </p>
         </div>
       )
     } else {

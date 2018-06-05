@@ -123,6 +123,7 @@ class Root extends Component {
             characterScore={this.state.characterScore}
             computeAnswer={this.computeAnswer}
             finalPositions={this.finalPositions}
+            gameOver={this.gameOver}
             />
           : <ResultModal
             characterProfile={this.state.characterProfile}
