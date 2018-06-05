@@ -11,7 +11,7 @@ const transform = name => {
     case 'CL':
       return 'Cersei Lannister'
     default:
-      return 'Petyr Bealish ("Little Finger")'
+      return 'Petyr Baelish ("Little Finger")'
   }
 }
 
