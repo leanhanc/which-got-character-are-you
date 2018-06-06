@@ -18,12 +18,16 @@ class questionContainer extends Component {
       document.querySelector('.respuesta').style.display = 'none'
       setTimeout(() => {
         document.querySelector('.respuesta').style.display = 'block'
-        document.querySelector('.respuesta').classList.add('fadeInUp')
-      }, 1000)
+        document.querySelector('.respuesta').classList.remove('fadeInUp')
+
+        // ? Fade in right o fadeInUpBig?
+        document.querySelector('.respuesta').classList.add('fadeInRight')
+      }, 1500)
     }
 
     // Agregar clase de fadeIn en la respuesta y removerla
     if (this.props.secuenceNum < 25) {
+      document.querySelector('.respuesta').classList.remove('fadeInRight')
       document.querySelector('.respuesta').classList.add('fadeInUp')
       if (this.props.secuenceNum < 25) {
         window.setTimeout(() => {
