@@ -13,7 +13,7 @@ import CalculatePositions from './components/model/calculatePositions'
 
 // Servicios
 import axios from 'axios'
-import { Styled, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 // Estilos
 import 'bulma/css/bulma.min.css'
 import './App.css'
@@ -37,7 +37,7 @@ class Root extends Component {
     secuenceNum: 0,
     showModal: false,
     gameOver: false,
-    gameOn: true
+    gameOn: false
   }
 
   // ! Lifecyle Hooks
@@ -73,6 +73,13 @@ class Root extends Component {
         this.setState({ characterResponses })
       })
       .catch(e => console.log(e))
+  }
+
+  beginGame = e => {
+    this.setState(prevState => ({
+      gameOn: true
+    }))
+    window.setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300)
   }
 
   computeAnswer = valueToCompute => {
@@ -125,10 +132,9 @@ class Root extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div className='container has-background-transparent'>
-          <Header />
-          {this.state.stateGameOn === false
-            ? <div>HOLA</div>
-            : <QuestionContainer
+          <Header gameOn={this.state.gameOn} begin={this.beginGame} />
+          {this.state.gameOn
+            ? <QuestionContainer
               secuenceNum={this.state.secuenceNum}
               preguntas={this.state.questions}
               renderAnswer={this.state.renderAnswer}
@@ -137,7 +143,8 @@ class Root extends Component {
               computeAnswer={this.computeAnswer}
               finalPositions={this.finalPositions}
               gameOver={this.gameOver}
-              />}
+              />
+            : null}
           {this.state.gameOver
             ? <div>
               <PostgameContainer finalPositions={this.finalPositions} />

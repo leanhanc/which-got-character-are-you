@@ -2,15 +2,20 @@ html {
   text-rendering: optimizeLegibility;
   background: #000000cc;
   -webkit-tap-highlight-color: transparent;
+
 }
 
+button {
+  outline: none;
+  box-shadow:none;
+}
 body {
   font-family: 'Inconsolata', monospace;
   letter-spacing: 1.4px;
 }
 
 p {
-  color: gray;
+  color: lightgray;
 }
 
 .q {
@@ -38,17 +43,19 @@ p {
 .gotFont {
   font-family: 'GOT';
   color:whitesmoke;
-  letter-spacing: 2px;
+  letter-spacing: 0.4rem;
 }
 
 .Cinzel{
   font-family: 'Cinzel';
-  color:  darkgoldenrod
+  color:  darkgoldenrod;
+  letter-spacing: 0.3rem;
 }
 
 .CinzelBold{
   font-family: 'CinzelBold.ttf';
-  color:  darkgoldenrod
+  color:  darkgoldenrod;
+  letter-spacing: 0.4rem;
 }
 
 /* Margin & Padding uglified*/
