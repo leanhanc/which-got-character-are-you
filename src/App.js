@@ -13,10 +13,12 @@ import CalculatePositions from './components/model/calculatePositions'
 
 // Servicios
 import axios from 'axios'
+import { Styled, ThemeProvider } from 'styled-components'
 // Estilos
 import 'bulma/css/bulma.min.css'
 import './App.css'
 import 'animate.css/animate.min.css'
+import { theme } from './themeWrapper'
 
 class Root extends Component {
   //! State
@@ -120,27 +122,29 @@ class Root extends Component {
 
   render () {
     return (
-      <div className='container has-background-black'>
-        <Header />
-        {!this.state.gameOver
-          ? <QuestionContainer
-            secuenceNum={this.state.secuenceNum}
-            preguntas={this.state.questions}
-            renderAnswer={this.state.renderAnswer}
-            characterResponses={this.state.characterResponses}
-            characterScore={this.state.characterScore}
-            computeAnswer={this.computeAnswer}
-            finalPositions={this.finalPositions}
-            gameOver={this.gameOver}
-            />
-          : <div>
-            <PostgameContainer finalPositions={this.finalPositions} />
-            <ResultModal
-              characterProfile={this.state.characterProfile}
+      <ThemeProvider theme={theme}>
+        <div className='container has-background-black'>
+          <Header />
+          {!this.state.gameOver
+            ? <QuestionContainer
+              secuenceNum={this.state.secuenceNum}
+              preguntas={this.state.questions}
+              renderAnswer={this.state.renderAnswer}
+              characterResponses={this.state.characterResponses}
+              characterScore={this.state.characterScore}
+              computeAnswer={this.computeAnswer}
               finalPositions={this.finalPositions}
+              gameOver={this.gameOver}
               />
-          </div>}
-      </div>
+            : <div>
+              <PostgameContainer finalPositions={this.finalPositions} />
+              <ResultModal
+                characterProfile={this.state.characterProfile}
+                finalPositions={this.finalPositions}
+                />
+            </div>}
+        </div>
+      </ThemeProvider>
     )
   }
 }
