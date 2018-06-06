@@ -6,16 +6,20 @@ class PostgameContainer extends Component {
 
   render () {
     return (
-      <div>
-        <p className='subtitle has-text-white'>
-          Sos {' '}
-          {transformName(this.posiciones[5])}
-          . También te podemos decir que estás cerca de {' '}
-          {transformName(this.posiciones[4])}
-          {' '} y lejos de {' '}
-          {transformName(this.posiciones[0])}
-        </p>
-      </div>
+      <section id='postgame'>
+        <div id='result'>
+          <p className='subtitle has-text-white'>
+            Sos {' '}
+            {transformName(this.posiciones[5])}
+            . También te podemos decir que estás cerca de {' '}
+            {transformName(this.posiciones[4])}
+            {' '} y lejos de {' '}
+            {transformName(this.posiciones[0])}
+          </p>
+        </div>
+        <div id='shares' />
+        COMPARTIR EN FACEBOOK - COMPARTIR EN TWITTER
+      </section>
     )
   }
 }

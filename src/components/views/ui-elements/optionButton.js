@@ -4,12 +4,13 @@ const optionbutton = styled.button`
 
   @media only screen and (min-width: 320px) and (max-width: 1024px) {
     &:active{
-      background-color: ${props => props.theme.primaryColor} !important;
-      transform: scale (1.1)
+      background-color: ${props => props.theme.primaryColor};
+      transform: scale(1.1);
+      border: 0px
     }
 
     padding: 15px 20px;
-    border-radius: 7px;
+    border-radius: 5px;
     border: 1.5px solid darkgray;
     font-weight: bolder;
     background-color: transparent;
@@ -22,10 +23,18 @@ const optionbutton = styled.button`
   }
 
   @media only screen and (min-width: 1024px) {
-    &:hover , &:active{
-    background-color: ${props => props.theme.primaryColor};}
+    &:active {
+    background-color: ${props => props.theme.primaryColor};
+    transform: scale(1.1);
+    border: 0px
+  }
+  &:hover {
+    border: 2px solid ${props => props.theme.primaryColor};
+    transform: scale(1.1);
+
+  }
     padding: 15px 20px;
-    border-radius: 7px;
+    border-radius: 5px;
     border: 1.5px solid darkgray;
     background-color: transparent;
     font-weight: bolder;

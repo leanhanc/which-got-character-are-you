@@ -36,7 +36,8 @@ class Root extends Component {
     questions: [],
     secuenceNum: 0,
     showModal: false,
-    gameOver: false
+    gameOver: false,
+    gameOn: true
   }
 
   // ! Lifecyle Hooks
@@ -123,10 +124,11 @@ class Root extends Component {
   render () {
     return (
       <ThemeProvider theme={theme}>
-        <div className='container has-background-black'>
+        <div className='container has-background-transparent'>
           <Header />
-          {!this.state.gameOver
-            ? <QuestionContainer
+          {this.state.stateGameOn === false
+            ? <div>HOLA</div>
+            : <QuestionContainer
               secuenceNum={this.state.secuenceNum}
               preguntas={this.state.questions}
               renderAnswer={this.state.renderAnswer}
@@ -135,14 +137,16 @@ class Root extends Component {
               computeAnswer={this.computeAnswer}
               finalPositions={this.finalPositions}
               gameOver={this.gameOver}
-              />
-            : <div>
+              />}
+          {this.state.gameOver
+            ? <div>
               <PostgameContainer finalPositions={this.finalPositions} />
               <ResultModal
                 characterProfile={this.state.characterProfile}
                 finalPositions={this.finalPositions}
                 />
-            </div>}
+            </div>
+            : null}
         </div>
       </ThemeProvider>
     )
