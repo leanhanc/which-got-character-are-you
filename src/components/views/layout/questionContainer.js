@@ -34,7 +34,7 @@ class questionContainer extends Component {
           if (document.querySelector('.respuesta') !== null) {
             document.querySelector('.respuesta').classList.remove('fadeIn')
           }
-        }, 800)
+        }, 1000)
       }
     }
   }
