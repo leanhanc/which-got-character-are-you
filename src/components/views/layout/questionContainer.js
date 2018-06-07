@@ -42,19 +42,6 @@ class questionContainer extends Component {
       <section id='secondScreen' className='hero is-fullheight'>
         <div className='hero-body'>
           <div className='container'>
-            <div className='arrizq'>
-              <img src='/img/adorno.png' className='arrizqImg' />
-            </div>
-            <div className='arrder'>
-              <img src='/img/adorno.png' className='arrderImg' />
-            </div>
-            <div className='abaizq'>
-              <img src='/img/adorno.png' className='abaizqImg' />
-            </div>
-            <div className='abader'>
-              <img src='/img/adorno.png' className='abaderImg' />
-            </div>
-
             <Question
               secuenceNum={this.props.secuenceNum}
               preguntas={this.props.preguntas}
