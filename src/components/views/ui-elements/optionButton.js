@@ -8,7 +8,7 @@ const optionbutton = styled.button`
       transform: scale(1.1);
       border: 0px
     }
-    padding: 16px 20px;
+    padding: 16px 0px !important;
     border-radius: 5px;
     border: 1.5px solid darkgray;
     font-weight: bolder;
@@ -19,6 +19,7 @@ const optionbutton = styled.button`
     color: lightgrey;
     margin: 16px auto;
     display: block;
+    width: 150px !important;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -41,7 +42,7 @@ const optionbutton = styled.button`
     letter-spacing: 2px;
     color: lightgrey;
     cursor: pointer;
-    margin: 8px 16px;
+    margin: 64px 16px;
     display: inline-block;
   }
 `

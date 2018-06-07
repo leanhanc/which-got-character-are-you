@@ -133,6 +133,19 @@ class Root extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div id='wrapper'>
+          <div className='arrizq'>
+            <img src='/img/adorno.png' className='arrizqImg' />
+          </div>
+          <div className='arrder'>
+            <img src='/img/adorno.png' className='arrderImg' />
+          </div>
+          <div className='abaizq'>
+            <img src='/img/adorno.png' className='abaizqImg' />
+          </div>
+          <div className='abader'>
+            <img src='/img/adorno.png' className='abaderImg' />
+          </div>
+
           <Header gameOn={this.state.startGame} begin={this.beginGame} />
           {this.state.startGame
             ? <QuestionContainer
