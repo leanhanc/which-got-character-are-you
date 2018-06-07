@@ -75,11 +75,12 @@ class Root extends Component {
       .catch(e => console.log(e))
   }
 
-  beginGame = e => {
+  beginGame = event => {
     this.setState(prevState => ({
       gameOn: true
     }))
     window.setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300)
+    event.target.style.display = 'none'
   }
 
   computeAnswer = valueToCompute => {

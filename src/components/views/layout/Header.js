@@ -3,10 +3,10 @@ import MainButton from '../ui-elements/mainButton'
 
 class Header extends React.Component {
   componentDidMount () {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1024 && !this.props.gameOn) {
       setInterval(
         () => document.getElementById('mainButton').classList.toggle('hover'),
-        2000
+        1000
       )
     }
   }
@@ -28,7 +28,7 @@ class Header extends React.Component {
               <MainButton
                 className='is-centered'
                 id='mainButton'
-                onClick={this.props.begin}
+                onClick={event => this.props.begin(event)}
               >
                 COMENZAR
               </MainButton>

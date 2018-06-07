@@ -17,7 +17,7 @@ const optionbutton = styled.button`
     letter-spacing: 2px;
     cursor: pointer;
     color: lightgrey;
-    margin: 32px auto;
+    margin: 16px auto;
     display: block;
   }
 

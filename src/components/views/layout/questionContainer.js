@@ -15,24 +15,24 @@ class questionContainer extends Component {
       this.props.secuenceNum === 11 ||
       this.props.secuenceNum === 17
     ) {
-      document.querySelector('.respuesta').style.display = 'none'
+      document.querySelector('.respuesta').style.visibility = 'hidden'
       setTimeout(() => {
-        document.querySelector('.respuesta').style.display = 'block'
-        document.querySelector('.respuesta').classList.remove('fadeInUp')
+        document.querySelector('.respuesta').style.visibility = 'visible'
+        document.querySelector('.respuesta').classList.remove('fadeIn')
 
         // ? Fade in right o fadeInUpBig?
         document.querySelector('.respuesta').classList.add('fadeInRight')
-      }, 1500)
+      }, 600)
     }
 
     // Agregar clase de fadeIn en la respuesta y removerla
     if (this.props.secuenceNum < 25) {
       document.querySelector('.respuesta').classList.remove('fadeInRight')
-      document.querySelector('.respuesta').classList.add('fadeInUp')
+      document.querySelector('.respuesta').classList.add('fadeIn')
       if (this.props.secuenceNum < 25) {
         window.setTimeout(() => {
           if (document.querySelector('.respuesta') !== null) {
-            document.querySelector('.respuesta').classList.remove('fadeInUp')
+            document.querySelector('.respuesta').classList.remove('fadeIn')
           }
         }, 800)
       }
