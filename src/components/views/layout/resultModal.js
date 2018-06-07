@@ -6,6 +6,7 @@ class Modal extends React.Component {
   closeModal () {
     document.getElementById('modal').classList.remove('is-active')
   }
+
   render () {
     return (
       <div

@@ -8,7 +8,7 @@ const optionbutton = styled.button`
       transform: scale(1.1);
       border: 0px
     }
-    padding: 15px 20px;
+    padding: 16px 20px;
     border-radius: 5px;
     border: 1.5px solid darkgray;
     font-weight: bolder;

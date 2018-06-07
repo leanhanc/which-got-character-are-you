@@ -11,7 +11,7 @@ const mainButton = styled.button`
   font-weight: bold;
   display: block;
   position: relative;
-  margin: 4rem auto;
+  margin: 1.5rem auto;
   text-align: center;
   background-color: ${props => props.theme.primaryColor};
   color: whitesmoke;
@@ -115,7 +115,7 @@ const mainButton = styled.button`
     font-weight: bold;
     display: block;
     position: relative;
-    margin: 8rem auto;
+    margin: 7rem auto;
     text-align: center;
     background-color: transparent;
     color: ${props => props.theme.primaryColor};

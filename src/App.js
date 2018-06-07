@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 // Layout
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
-import ResultModal from './components/views/layout/resultModal'
 import PostgameContainer from './components/views/layout/postgameContainer'
 
 // Helpers
@@ -14,6 +13,7 @@ import CalculatePositions from './components/model/calculatePositions'
 // Servicios
 import axios from 'axios'
 import { ThemeProvider } from 'styled-components'
+
 // Estilos
 import 'bulma/css/bulma.min.css'
 import './App.css'
@@ -37,7 +37,7 @@ class Root extends Component {
     secuenceNum: 0,
     showModal: false,
     gameOver: false,
-    gameOn: false
+    starGame: false
   }
 
   // ! Lifecyle Hooks
@@ -77,7 +77,7 @@ class Root extends Component {
 
   beginGame = event => {
     this.setState(prevState => ({
-      gameOn: true
+      startGame: true
     }))
     window.setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300)
     event.target.style.display = 'none'
@@ -132,9 +132,9 @@ class Root extends Component {
   render () {
     return (
       <ThemeProvider theme={theme}>
-        <div className='container has-background-transparent'>
-          <Header gameOn={this.state.gameOn} begin={this.beginGame} />
-          {this.state.gameOn
+        <div id='wrapper'>
+          <Header gameOn={this.state.startGame} begin={this.beginGame} />
+          {this.state.startGame
             ? <QuestionContainer
               secuenceNum={this.state.secuenceNum}
               preguntas={this.state.questions}
@@ -147,13 +147,12 @@ class Root extends Component {
               />
             : null}
           {this.state.gameOver
-            ? <div>
-              <PostgameContainer finalPositions={this.finalPositions} />
-              <ResultModal
+            ? <section>
+              <PostgameContainer
                 characterProfile={this.state.characterProfile}
                 finalPositions={this.finalPositions}
                 />
-            </div>
+            </section>
             : null}
         </div>
       </ThemeProvider>

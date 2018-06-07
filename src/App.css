@@ -5,6 +5,13 @@ html {
 
 
 }
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+
+.contesta{
+  margin-top:1.5rem
+}
+}
+
 
 button {
   outline: none;
@@ -14,6 +21,20 @@ body {
   font-family: 'Inconsolata', monospace;
   letter-spacing: 1.4px;
   overflow: hidden;
+
+}
+
+.scale3{
+  transform: scale(1.3)
+}
+.scale4{
+  transform: scale(1.4)
+}
+.scale5{
+  transform: scale(1.5)
+}
+.scale6{
+  transform: scale(1.6)
 }
 
 p {

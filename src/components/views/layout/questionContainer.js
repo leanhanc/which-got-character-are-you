@@ -19,8 +19,6 @@ class questionContainer extends Component {
       setTimeout(() => {
         document.querySelector('.respuesta').style.visibility = 'visible'
         document.querySelector('.respuesta').classList.remove('fadeIn')
-
-        // ? Fade in right o fadeInUpBig?
         document.querySelector('.respuesta').classList.add('fadeInRight')
       }, 600)
     }
@@ -41,32 +39,36 @@ class questionContainer extends Component {
 
   render () {
     return (
-      <div className='container'>
-        <Question
-          secuenceNum={this.props.secuenceNum}
-          preguntas={this.props.preguntas}
-          finalPositions={this.props.finalPositions}
-        />
-        <Answer
-          characterResponses={this.props.characterResponses}
-          answerNumRender={this.props.secuenceNum}
-          startAnswerAnimation={this.props.startAnswerAnimation}
-        />
-        <div className='container has-text-centered m-t-32'>
-          <OptionButton name='-3' onClick={this.userAnswerHandler}>
-            MUY EN DESACUERDO
-          </OptionButton>
-          <OptionButton name='-1' onClick={this.userAnswerHandler}>
-            DESACUERDO
-          </OptionButton>
-          <OptionButton name='1' onClick={this.userAnswerHandler}>
-            DE ACUERDO
-          </OptionButton>
-          <OptionButton name='3' onClick={this.userAnswerHandler}>
-            MUY DE ACUERDO
-          </OptionButton>
+      <section id='secondScreen' className='hero is-fullheight'>
+        <div className='hero-body'>
+          <div className='container'>
+            <Question
+              secuenceNum={this.props.secuenceNum}
+              preguntas={this.props.preguntas}
+              finalPositions={this.props.finalPositions}
+            />
+            <Answer
+              characterResponses={this.props.characterResponses}
+              answerNumRender={this.props.secuenceNum}
+              startAnswerAnimation={this.props.startAnswerAnimation}
+            />
+            <div className='container has-text-centered m-t-32'>
+              <OptionButton name='-3' onClick={this.userAnswerHandler}>
+                MUY EN DESACUERDO
+              </OptionButton>
+              <OptionButton name='-1' onClick={this.userAnswerHandler}>
+                DESACUERDO
+              </OptionButton>
+              <OptionButton name='1' onClick={this.userAnswerHandler}>
+                DE ACUERDO
+              </OptionButton>
+              <OptionButton name='3' onClick={this.userAnswerHandler}>
+                MUY DE ACUERDO
+              </OptionButton>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     )
   }
 }
