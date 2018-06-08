@@ -7,19 +7,24 @@ class PostgameContainer extends Component {
 
   render () {
     return (
-      <section id='game' className='hero-body'>
-        <p className='subtitle has-text-white'>
-          Sos {' '}
-          {transformName(this.posiciones[5])}
-          . También te podemos decir que estás cerca de {' '}
-          {transformName(this.posiciones[4])}
-          {' '} y lejos de {' '}
-          {transformName(this.posiciones[0])}
-        </p>
-        <div id='shares'>
-          COMPARTIR EN FACEBOOK - COMPARTIR EN TWITTER
+      <section id='postgame' className='mapa hero is-fullheight'>
+        <div className='hero-body'>
+          <div className='container'>
+            <h1 className='title has-text-white'>
+              Sos {' '}
+              <span className='Cinzel has-font-has-text-weight-bold'>
+                {transformName(this.posiciones[5])}.
+              </span>
+              También te podemos decir que estás cerca de {' '}
+              {transformName(this.posiciones[4])}
+              {' '} y lejos de {' '}
+              {transformName(this.posiciones[0])}
+            </h1>
+            <div id='shares'>
+              COMPARTIR EN FACEBOOK - COMPARTIR EN TWITTER
+            </div>
+          </div>
         </div>
-
         <ResultModal
           characterProfile={this.props.characterProfile}
           finalPositions={this.props.finalPositions}

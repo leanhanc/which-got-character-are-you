@@ -105,8 +105,6 @@ class Root extends Component {
   }
 
   fetchCharacterProfile (personajeGanador) {
-    const setGameOver = { gameOver: true }
-    this.setState(setGameOver)
     const mongoLab = process.env.REACT_APP_APIKEY
     axios
       .get(
@@ -124,11 +122,19 @@ class Root extends Component {
   }
 
   finalPositions = () => {
+    // Se termiaron las preguntas
+    const setGameOver = { gameOver: true }
+    this.setState(setGameOver)
+    // Se ordenan los personajes en el array de posiciones
     let posiciones = { ...this.state.characterScore }
     let posicionesFinal = CalculatePositions(posiciones)
+    // Se obtienen los datos del ganador para mostrarlos en el modal
     if (this.state.characterProfile.name === '') {
       this.fetchCharacterProfile(posicionesFinal[5])
     }
+    // Esconder los botones y mostrar devolución final
+    const stopGame = { startGame: false }
+    this.setState(stopGame)
     return posicionesFinal
   }
   // ! Render

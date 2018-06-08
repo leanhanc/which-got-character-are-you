@@ -127,6 +127,10 @@ p {
   display: block;
 }
 
+.mapa{
+  background: url('/img/1920.jpg')
+}
+
 .modalRadius{
   border-radius: 3%;
 }
