@@ -48,6 +48,10 @@ p {
 
 }
 
+#characterPic{
+  margin: 0 auto;
+  display: block;
+}
 
 .backPrimary{
   background-color: darkgoldenrod

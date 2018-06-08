@@ -26,9 +26,9 @@ class Modal extends React.Component {
             <div className='columns'>
               <div
                 id='characterPic'
-                className='container has-text-centered imgPersonaje'
+                className='container column has-text-centered imgPersonaje'
               >
-                <h2 className='gotFont p-b-32 is-size-4'>
+                <h2 className='gotFont p-b-32 is-size-4 has-text-centered'>
                   {this.props.characterProfile.name}
                 </h2>
                 <img src={`${this.props.characterProfile.pic}`} /><br />
@@ -38,7 +38,7 @@ class Modal extends React.Component {
                   </i>
                 </span>
               </div>
-              <div className='bio'>
+              <div className='column bio'>
                 <FormatText>
                   {this.props.characterProfile.bio}
                 </FormatText>
