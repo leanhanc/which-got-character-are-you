@@ -6,6 +6,11 @@ class Modal extends React.Component {
   closeModal () {
     document.getElementById('modal').classList.remove('is-active')
   }
+  componentDidMount () {
+    setTimeout(() => {
+      document.getElementById('modalButton').style.visibility = 'visible'
+    }, 1000)
+  }
 
   render () {
     return (
@@ -16,40 +21,37 @@ class Modal extends React.Component {
       >
         <div className='modal-background' />
         <div className='modal-card modalRadius'>
-          <section className='modal-card-body has-text-centered pergamino has-text-dark'>
+          <section className='modal-card-body has-text-centered pergamino has-text-dark is-vcentered'>
             <h1 className='title has-text-weight-bold' />
-            <h5 className='subtitle  has-text-dark' />
-            <div className='columns is-variable is-4'>
+            <div className='columns'>
               <div
                 id='characterPic'
-                className='has-text-centered imgPersonaje is-one-third'
+                className='container has-text-centered imgPersonaje'
               >
-                <h2 className='gotFont p-b-16 is-size-4'>
+                <h2 className='gotFont p-b-32 is-size-4'>
                   {this.props.characterProfile.name}
                 </h2>
-                <img src={`${this.props.characterProfile.pic}`} />
+                <img src={`${this.props.characterProfile.pic}`} /><br />
                 <span>
-                  <i className='has-text-grey-light'>
+                  <i className='has-text-grey-light is-size-6'>
                     {this.props.characterProfile.alias}
                   </i>
                 </span>
               </div>
-              <div className='container is-two-thirds has-text-grey-dark'>
-                <blockquote>
-                  <i>
-                    <span>
-                      {' '}
-                      <FormatText>
-                        {this.props.characterProfile.dixit}
-                      </FormatText>
-                    </span>
-                  </i>
-                </blockquote>
-                <span className='p-t-24'>
-                  <FormatText>{this.props.characterProfile.bio}</FormatText>
-                </span>
+              <div className='bio'>
+                <FormatText>
+                  {this.props.characterProfile.bio}
+                </FormatText>
               </div>
             </div>
+            <i className='has-text-dark has-text-centered has-text-weight-bold Cinzel'>
+              <FormatText>
+                {this.props.characterProfile.dixit}
+              </FormatText>
+            </i>
+            <ModalButton id='modalButton' className='animated fadeIn'>
+              CONTINUAR
+            </ModalButton>
           </section>
         </div>
       </div>

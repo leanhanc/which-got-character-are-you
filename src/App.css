@@ -22,6 +22,11 @@ p {
   color: lightgray;
 }
 
+.is-vertical-center {
+  display: flex;
+  align-items: center center;
+}
+
 .q {
   color:  darkgoldenrod;
   font-family: 'Cinzel';
@@ -46,6 +51,20 @@ p {
 
 .backPrimary{
   background-color: darkgoldenrod
+}
+
+.bio {
+  color: whitesmoke;
+  font-family: 'Inconsolata', monospace;
+  margin: auto 0;
+  vertical-align: middle;
+}
+
+.bio > span{
+  color: whitesmoke;
+  font-family: 'Inconsolata', monospace;
+  margin: auto 0;
+  vertical-align: middle;
 }
 
 .gotFont {
@@ -77,6 +96,7 @@ p {
   background-blend-mode: multiply;
 }
 .imgPersonaje{
+  text-align: center;
   max-width: 250px;
   margin: auto 10px;
   opacity: 0.7}
@@ -84,6 +104,7 @@ p {
 .imgPersonaje img {
   border-radius: 5% !important;
   max-width: 250px;
+  margin: 0 auto;
   }
 
 .modalRadius{
