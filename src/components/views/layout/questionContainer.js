@@ -66,6 +66,12 @@ class questionContainer extends Component {
                 MUY DE ACUERDO
               </OptionButton>
             </div>
+            <progress
+              id='progressBar'
+              className='progress is-medium m-t-48'
+              value='0'
+              max='24'
+            />
           </div>
         </div>
       </section>

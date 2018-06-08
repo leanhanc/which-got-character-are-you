@@ -33,6 +33,20 @@ p {
   letter-spacing: 2px;
 }
 
+
+.progress::-webkit-progress-value{
+  background-color: darkgoldenrod 
+}
+.progress::-moz-progress-bar{
+  background-color: darkgoldenrod 
+}
+.progress::-ms-fill {
+  background-color: darkgoldenrod;
+  border: none
+}
+
+
+
 .a {
   color: gray;
 }

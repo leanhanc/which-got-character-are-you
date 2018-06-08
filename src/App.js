@@ -4,11 +4,13 @@ import React, { Component } from 'react'
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
 import PostgameContainer from './components/views/layout/postgameContainer'
+import MedievalOrnaments from './components/views/ui-elements/ornaments'
 
 // Helpers
 
-import PersonajeAfectado from './components/model/affectedCharacter'
-import CalculatePositions from './components/model/calculatePositions'
+import PersonajeAfectado from './components/helpers/affectedCharacter'
+import CalculatePositions from './components/helpers/calculatePositions'
+import progressBar from './components/helpers/updateProgressBar'
 
 // Servicios
 import axios from 'axios'
@@ -84,6 +86,8 @@ class Root extends Component {
   }
 
   computeAnswer = valueToCompute => {
+    // Actualizar Barra de Progresso
+    progressBar()
     let QNum = this.state.secuenceNum
     // Identificar a qué personaje corresponde la pregunta
     let pj = PersonajeAfectado(QNum)
@@ -133,19 +137,7 @@ class Root extends Component {
     return (
       <ThemeProvider theme={theme}>
         <div id='wrapper'>
-          <div className='arrizq'>
-            <img src='/img/adorno.png' className='arrizqImg' />
-          </div>
-          <div className='arrder'>
-            <img src='/img/adorno.png' className='arrderImg' />
-          </div>
-          <div className='abaizq'>
-            <img src='/img/adorno.png' className='abaizqImg' />
-          </div>
-          <div className='abader'>
-            <img src='/img/adorno.png' className='abaderImg' />
-          </div>
-
+          <MedievalOrnaments />
           <Header gameOn={this.state.startGame} begin={this.beginGame} />
           {this.state.startGame
             ? <QuestionContainer

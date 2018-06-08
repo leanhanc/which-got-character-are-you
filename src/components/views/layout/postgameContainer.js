@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import transformName from '../../model/transformName'
+import transformName from '../../helpers/transformName'
 import ResultModal from './resultModal'
 
 class PostgameContainer extends Component {
