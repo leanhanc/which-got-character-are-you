@@ -117,6 +117,10 @@ class Root extends Component {
       .then(() => {
         const showModal = { showModal: true }
         this.setState(showModal)
+        window.setTimeout(
+          () => document.getElementById('postgame').scrollIntoView(),
+          300
+        )
       })
       .catch(e => console.log(e))
   }

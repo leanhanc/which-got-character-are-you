@@ -68,7 +68,7 @@ class questionContainer extends Component {
             </div>
             <progress
               id='progressBar'
-              className='progress is-medium m-t-48'
+              className='progress is-small m-t-32'
               value='0'
               max='24'
             />
