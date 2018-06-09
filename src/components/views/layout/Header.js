@@ -24,7 +24,7 @@ class Header extends React.Component {
             </h1>
 
             <h3 className='Cinzel has-text-centered is-size-6 is-uppercase contesta'>
-              Contesta estas preguntas y enterate
+              Hace el test y enterate
             </h3>
             <Houses className='m-t-64 has-text-centered' />
             <div id='starButtonContainer has-text-centered'>

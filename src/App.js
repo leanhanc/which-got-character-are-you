@@ -10,7 +10,7 @@ import MedievalOrnaments from './components/views/ui-elements/ornaments'
 
 import PersonajeAfectado from './components/helpers/affectedCharacter'
 import CalculatePositions from './components/helpers/calculatePositions'
-import progressBar from './components/helpers/updateProgressBar'
+import ProgressBar from './components/helpers/updateProgressBar'
 
 // Servicios
 import axios from 'axios'
@@ -87,7 +87,7 @@ class Root extends Component {
 
   computeAnswer = valueToCompute => {
     // Actualizar Barra de Progresso
-    progressBar()
+    ProgressBar()
     let QNum = this.state.secuenceNum
     // Identificar a qué personaje corresponde la pregunta
     let pj = PersonajeAfectado(QNum)
