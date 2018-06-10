@@ -33,7 +33,8 @@ class Root extends Component {
       alias: '',
       bio: '',
       dixit: '',
-      pic: ''
+      pic: '',
+      share: ''
     },
     questions: [],
     secuenceNum: 0,

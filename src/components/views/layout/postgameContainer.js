@@ -76,8 +76,8 @@ class PostgameContainer extends Component {
             'og:description': 'Hice el para saber qué personaje de GOT soy y me salió: "' +
               result +
               '"',
-            'og:image': this.props.characterProfile.pic,
-            'og:image:type': 'image/jpg'
+            'og:image:type': 'image/jpg',
+            'og:image': `https://testgot.now.sh/${this.props.characterProfile.share}`
           }
         })
       },
