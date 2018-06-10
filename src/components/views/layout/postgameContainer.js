@@ -55,7 +55,7 @@ class PostgameContainer extends Component {
     ) {
       return 'te parecés a'
     } else {
-      return 'te parecés un poco a '
+      return 'tenés algunas cositas de '
     }
   }
 
