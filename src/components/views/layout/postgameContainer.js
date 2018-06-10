@@ -63,7 +63,7 @@ class PostgameContainer extends Component {
     return document.getElementById('devolucion').textContent
   }
 
-  postToFacebook = () => {
+  postToFacebook = props => {
     let result = this.getResult()
     FB.ui(
       {
@@ -71,13 +71,13 @@ class PostgameContainer extends Component {
         action_type: 'og.shares',
         action_properties: JSON.stringify({
           object: {
-            'og:url': 'http://bit.do/testperonista',
+            'og:url': 'https://testgot.now.sh/',
             'og:title': '¿Quién sos en Game of Thrones?',
             'og:description': 'Hice el para saber qué personaje de GOT soy y me salió: "' +
               result +
-              '"'
-            // 'og:image': '',
-            // 'og:image:type': 'image/jpg'
+              '"',
+            'og:image': this.props.characterProfile.pic,
+            'og:image:type': 'image/jpg'
           }
         })
       },
@@ -100,7 +100,7 @@ class PostgameContainer extends Component {
               <span>
                 También te podemos decir que {' '} {this.getDifference()} {' '}
                 {transformName(this.posiciones[4])}
-                {' '} y estás lejos de {' '}
+                {' '} y que estás lejos de {' '}
                 {transformName(this.posiciones[0])}.
               </span>
             </h1>
