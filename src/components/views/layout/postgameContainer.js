@@ -87,6 +87,19 @@ class PostgameContainer extends Component {
     )
   }
 
+  postToTwitter = props => {
+    let result = this.getResult()
+    let p1 = encodeURIComponent(
+      'Hice el test para saber qué personaje de #GOT soy y me salió: "'
+    )
+    let p2 = encodeURIComponent('" Podés hacerlo en: https://testgot.now.sh')
+    const twitterWindow = window.open(
+      `https://twitter.com/intent/tweet?text=${p1}${result}${p2}`
+    )
+    if (twitterWindow.focus) {
+      twitterWindow.focus()
+    }
+  }
   render () {
     return (
       <section id='postgame' className='mapa hero is-fullheight'>
@@ -117,7 +130,7 @@ class PostgameContainer extends Component {
                 {' '}
                 COMPARTIR EN FACEBOOK
               </OptionButton>
-              <OptionButton>
+              <OptionButton onClick={this.postToTwitter}>
                 {' '}
                 <i className='fa fa-twitter' />
                 {' '} COMPARTIR EN TWITTER{' '}
