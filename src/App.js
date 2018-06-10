@@ -165,6 +165,7 @@ class Root extends Component {
             ? <section>
               <PostgameContainer
                 characterProfile={this.state.characterProfile}
+                characterScore={this.state.characterScore}
                 finalPositions={this.finalPositions}
                 />
             </section>

@@ -33,6 +33,32 @@ class PostgameContainer extends Component {
     window.location.reload()
   }
 
+  getDifference = props => {
+    if (
+      this.props.characterScore[this.posiciones[5]] -
+        this.props.characterScore[this.posiciones[4]] ===
+      0
+    ) {
+      return 'te pareces muchísimo a '
+    }
+    if (
+      this.props.characterScore[this.posiciones[5]] -
+        this.props.characterScore[this.posiciones[4]] ===
+      1
+    ) {
+      return 'te pareces mucho a '
+    }
+    if (
+      this.props.characterScore[this.posiciones[5]] -
+        this.props.characterScore[this.posiciones[4]] ===
+      2
+    ) {
+      return 'te pareces a'
+    } else {
+      return 'te pareces un poco a '
+    }
+  }
+
   getResult () {
     return document.getElementById('devolucion').textContent
   }
@@ -72,9 +98,9 @@ class PostgameContainer extends Component {
                 {transformName(this.posiciones[5])}.
               </span><br /><br />
               <span>
-                También te podemos decir que estás cerca de {' '}
+                También te podemos decir que {' '} {this.getDifference()} {' '}
                 {transformName(this.posiciones[4])}
-                {' '} y lejos de {' '}
+                {' '} y estás lejos de {' '}
                 {transformName(this.posiciones[0])}.
               </span>
             </h1>
