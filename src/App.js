@@ -25,7 +25,7 @@ import { theme } from './themeWrapper'
 class Root extends Component {
   //! State
   state = {
-    characterScore: { CL: 0, PB: 0, SS: 0, JS: 0, TL: 0, DT: 0 },
+    characterScore: { DT: 0, PB: 0, TL: 0, JS: 0, CL: 0, SS: 0 },
     characterResponses: { cr_0: {}, cr_1: {}, cr_2: {}, cr_3: {} },
     characterProfile: {
       initials: '',
