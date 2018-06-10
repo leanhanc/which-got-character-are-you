@@ -39,23 +39,23 @@ class PostgameContainer extends Component {
         this.props.characterScore[this.posiciones[4]] ===
       0
     ) {
-      return 'te pareces muchísimo a '
+      return 'te parecés muchísimo a '
     }
     if (
       this.props.characterScore[this.posiciones[5]] -
         this.props.characterScore[this.posiciones[4]] ===
       1
     ) {
-      return 'te pareces mucho a '
+      return 'te parecés mucho a '
     }
     if (
       this.props.characterScore[this.posiciones[5]] -
         this.props.characterScore[this.posiciones[4]] ===
       2
     ) {
-      return 'te pareces a'
+      return 'te parecés a'
     } else {
-      return 'te pareces un poco a '
+      return 'te parecés un poco a '
     }
   }
 
