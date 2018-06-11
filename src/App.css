@@ -199,4 +199,10 @@ p {
 .contesta{
   margin-top:1rem
 }
+
+.imgPersonaje img {
+  border-radius: 5% !important;
+  width: 165px !important;
+  margin: 0 auto;
+  }
 }
