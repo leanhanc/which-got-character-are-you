@@ -17,7 +17,7 @@ class Header extends React.Component {
         <div className='hero-body'>
           <div className='container'>
             <h1 className='Cinzel has-text-centered is-size-4 is-uppercase p-b-24 is-block'>
-              Quién sos en
+              Quien sos en
             </h1>
             <h1 className='gotFont has-text-centered is-size-1 is-uppercase'>
               Game of Thrones
