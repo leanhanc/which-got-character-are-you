@@ -13,7 +13,7 @@ class Modal extends React.Component {
   }
 
   render () {
-    const { characterProfile } = this.props
+    const { characterProfile: character } = this.props
     return (
       <div
         className='modal is-active animated tada is-overlay'
@@ -29,24 +29,25 @@ class Modal extends React.Component {
                 className='container column has-text-centered imgPersonaje'
               >
                 <h2 className='gotFont p-b-32 is-size-4 has-text-centered'>
-                  {characterProfile.name}
+                  {character.name}
                 </h2>
-                <img src={`${this.props.characterProfile.pic}`} /><br />
+                <img src={character.pic} />
+                <br />
                 <span>
                   <i className='has-text-grey-light is-size-6'>
-                    {characterProfile.alias}
+                    {character.alias}
                   </i>
                 </span>
               </div>
               <div className='column bio'>
                 <FormatText>
-                  {characterProfile.bio}
+                  {character.bio}
                 </FormatText>
               </div>
             </div>
             <i className='has-text-dark has-text-centered has-text-weight-bold Cinzel'>
               <FormatText>
-                {characterProfile.dixit}
+                {character.dixit}
               </FormatText>
             </i>
             <ModalButton id='modalButton'>
