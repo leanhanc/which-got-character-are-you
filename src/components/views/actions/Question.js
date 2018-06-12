@@ -20,46 +20,32 @@ class Question extends Component {
       get[0].classList.add('slideInLeft')
     }
   }
+  currentQuestion = props => {
+    const { secuenceNum: enunciadoActual } = this.props
+    if (enunciadoActual >= 0 && enunciadoActual < 6) {
+      return 'q1'
+    }
+    if (enunciadoActual >= 6 && enunciadoActual < 12) {
+      return 'q2'
+    }
+    if (enunciadoActual >= 12 && enunciadoActual < 18) {
+      return 'q3'
+    }
+    if (enunciadoActual >= 18 && enunciadoActual < 6) {
+      return 'q4'
+    }
+  }
   render () {
-    let count = this.props.secuenceNum
-    if (count >= 0 && count < 6) {
-      return (
-        <div className='pregunta animated slideInLeft'>
-          <p className='has-text-centered q'>
-            {this.props.preguntas.q1}
-          </p>
-        </div>
-      )
-    }
-    if (count >= 6 && count < 12) {
-      return (
-        <div className='pregunta animated slideInLeft'>
-          <p className='has-text-centered q'>
-            {this.props.preguntas.q2}
-          </p>
-        </div>
-      )
-    }
-    if (count >= 12 && count < 18) {
-      return (
-        <div className='pregunta animated slideInLeft'>
-          <p className='has-text-centered q'>
-            {this.props.preguntas.q3}
-          </p>
-        </div>
-      )
-    }
-    if (count >= 18 && count < 24) {
-      return (
-        <div className='pregunta animated slideInLeft'>
-          <p className='has-text-centered q'>
-            {this.props.preguntas.q4}
-          </p>
-        </div>
-      )
-    } else {
-      return null
-    }
+    const { secuenceNum: count, preguntas } = this.props
+    const renderQ = this.currentQuestion()
+
+    return (
+      <div className='pregunta animated slideInLeft'>
+        <p className='has-text-centered q'>
+          {preguntas[renderQ]}
+        </p>
+      </div>
+    )
   }
 }
 
