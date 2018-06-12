@@ -2,46 +2,53 @@ import React, { Component } from 'react'
 
 class Answer extends Component {
   render () {
-    let count = this.props.answerNumRender
-    if (count >= 0 && count < 6) {
+    const {
+      answerNumRender: { count },
+      answerNumRender,
+      characterResponses
+    } = this.props
+
+    const className =
+      'has-text-centered p-t-20 has-text-weight-bold respuesta animated'
+
+    if (answerNumRender >= 0 && answerNumRender < 6) {
       return (
-        <div className='has-text-centered p-t-20 has-text-weight-bold respuesta animated'>
+        <div className={className}>
           <p>
-            {this.props.characterResponses.cr_0[this.props.answerNumRender]}
+            {characterResponses.cr_0[answerNumRender]}
           </p>
         </div>
       )
     }
 
-    if (count >= 6 && count < 12) {
+    if (answerNumRender >= 6 && answerNumRender < 12) {
       return (
-        <div className='has-text-centered p-t-20 has-text-weight-bold respuesta animated'>
+        <div className={className}>
           <p>
-            {this.props.characterResponses.cr_1[this.props.answerNumRender]}
+            {characterResponses.cr_1[answerNumRender]}
           </p>
         </div>
       )
     }
-    if (count >= 12 && count < 18) {
+    if (answerNumRender >= 12 && answerNumRender < 18) {
       return (
-        <div className='has-text-centered p-t-20 has-text-weight-bold respuesta animated'>
+        <div className={className}>
           <p>
-            {this.props.characterResponses.cr_2[this.props.answerNumRender]}
+            {characterResponses.cr_2[answerNumRender]}
           </p>
         </div>
       )
     }
-    if (count >= 18 && count < 24) {
+    if (answerNumRender >= 18 && answerNumRender < 24) {
       return (
-        <div className='has-text-centered p-t-20 has-text-weight-bold respuesta animated'>
+        <div className={className}>
           <p>
-            {this.props.characterResponses.cr_3[this.props.answerNumRender]}
+            {characterResponses.cr_3[answerNumRender]}
           </p>
         </div>
       )
-    } else {
-      return null
     }
+    return null
   }
 }
 
