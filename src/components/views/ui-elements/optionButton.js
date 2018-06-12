@@ -19,7 +19,7 @@ const optionbutton = styled.button`
     color: lightgrey;
     margin: 16px auto;
     display: block;
-    width: 160px !important;
+    width: 170px !important;
     transition: 0.1s all;
   }
 
