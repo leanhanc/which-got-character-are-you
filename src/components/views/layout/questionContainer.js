@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Question from '../actions/Question'
 import Answer from '../actions/Answer'
+import ProgressBar from '../ui-elements/progressBar'
 import OptionButton from '../ui-elements/optionButton'
 
 class questionContainer extends Component {
@@ -41,7 +42,7 @@ class questionContainer extends Component {
     return (
       <section id='secondScreen' className='hero is-fullheight'>
         <div className='hero-body'>
-          <div className='container'>
+          <div className='container QA'>
             <Question
               secuenceNum={this.props.secuenceNum}
               preguntas={this.props.preguntas}
@@ -52,7 +53,7 @@ class questionContainer extends Component {
               answerNumRender={this.props.secuenceNum}
               startAnswerAnimation={this.props.startAnswerAnimation}
             />
-            <div className='container has-text-centered m-t-32'>
+            <div className='container buttonPanel has-text-centered m-t-32'>
               <OptionButton name='-3' onClick={this.userAnswerHandler}>
                 MUY EN DESACUERDO
               </OptionButton>
@@ -66,12 +67,12 @@ class questionContainer extends Component {
                 MUY DE ACUERDO
               </OptionButton>
             </div>
-            <progress
-              id='progressBar'
-              className='progress is-small m-t-32'
-              value='0'
-              max='24'
-            />
+            <div className=' progressContainer'>
+              <ProgressBar
+                value={this.props.secuenceNum}
+                max={this.props.totalSecuence}
+              />
+            </div>
           </div>
         </div>
       </section>

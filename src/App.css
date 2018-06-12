@@ -1,6 +1,6 @@
 html {
   text-rendering: optimizeLegibility;
-  background: #000000cc;
+  background: hsla(0, 0%, 0%, 0.8);
   -webkit-tap-highlight-color: transparent;
 
 
@@ -35,14 +35,21 @@ p {
 
 
 .progress::-webkit-progress-value{
-  background-color: darkgoldenrod 
+  background-color: darkgoldenrod;
+  transition: width 0.5s ease;
 }
+
 .progress::-moz-progress-bar{
-  background-color: darkgoldenrod 
+  background-color: darkgoldenrod;
+  transition: width 0.5s ease;
 }
 .progress::-ms-fill {
   background-color: darkgoldenrod;
   border: none
+}
+.progress::-webkit-progress-value::before{
+  display: inline;
+  content: "%" attr(value);
 }
 
 
@@ -58,7 +65,7 @@ p {
 
 @font-face {
   font-family: 'Got';
-  src: url(./fonts/Got.ttf);
+  src: url(./fonts/got.ttf);
 
 }
 
@@ -176,7 +183,7 @@ p {
   height: 80px;
 
 }
-  
+
 
 .scale3{
   transform: scale(1.3)
@@ -191,11 +198,21 @@ p {
   transform: scale(1.6)
 }
 
+
+@media only screen and (min-width: 1024px) {
+.QA {
+  height: 400px;
+}
+
+.buttonPanel{
+  height: 400px;
+}
+}
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   .arrizq, .arrder, .abaizq, .abader{
     display: none
   }
-  
+
 .contesta{
   margin-top:1rem
 }

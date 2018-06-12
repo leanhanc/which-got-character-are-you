@@ -13,6 +13,7 @@ cursor: pointer;
 margin: 24px auto;
 visibility:hidden;
 display: block;
+transition: 0.1s all;
 
   &:hover{
     transform: scale(1.1)

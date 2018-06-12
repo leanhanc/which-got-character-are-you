@@ -20,18 +20,18 @@ const optionbutton = styled.button`
     margin: 16px auto;
     display: block;
     width: 150px !important;
+    transition: 0.1s all;
   }
 
   @media only screen and (min-width: 1024px) {
-    &:active {
+
+  &:active {
     background-color: ${props => props.theme.primaryColor};
-    transform: scale(1.1);
-    border: 0px
+    border: 0px;
   }
   &:hover {
     border: 2px solid ${props => props.theme.primaryColor};
-    transform: scale(1.1);
-
+    transform: scale(1.1)
   }
     padding: 15px 20px;
     border-radius: 5px;
@@ -44,6 +44,7 @@ const optionbutton = styled.button`
     cursor: pointer;
     margin: 64px 16px;
     display: inline-block;
+    transition: 0.1s all;
   }
 `
 

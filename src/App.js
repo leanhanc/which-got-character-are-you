@@ -4,13 +4,12 @@ import React, { Component } from 'react'
 import Header from './components/views/layout/Header'
 import QuestionContainer from './components/views/layout/questionContainer'
 import PostgameContainer from './components/views/layout/postgameContainer'
-import MedievalOrnaments from './components/views/ui-elements/ornaments'
+import MedievalOrnaments from './components/views/layout/ornaments'
 
 // Helpers
 
 import PersonajeAfectado from './components/helpers/affectedCharacter'
 import CalculatePositions from './components/helpers/calculatePositions'
-import ProgressBar from './components/helpers/updateProgressBar'
 
 // Servicios
 import axios from 'axios'
@@ -38,6 +37,7 @@ class Root extends Component {
     },
     questions: [],
     secuenceNum: 0,
+    totalSecuence: 24,
     showModal: false,
     gameOver: false,
     starGame: false
@@ -87,8 +87,6 @@ class Root extends Component {
   }
 
   computeAnswer = valueToCompute => {
-    // Actualizar Barra de Progresso
-    ProgressBar()
     let QNum = this.state.secuenceNum
     // Identificar a qué personaje corresponde la pregunta
     let pj = PersonajeAfectado(QNum)
@@ -153,6 +151,7 @@ class Root extends Component {
           {this.state.startGame
             ? <QuestionContainer
               secuenceNum={this.state.secuenceNum}
+              totalSecuence={this.state.totalSecuence}
               preguntas={this.state.questions}
               renderAnswer={this.state.renderAnswer}
               characterResponses={this.state.characterResponses}

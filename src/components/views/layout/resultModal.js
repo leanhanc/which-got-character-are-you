@@ -49,7 +49,7 @@ class Modal extends React.Component {
                 {this.props.characterProfile.dixit}
               </FormatText>
             </i>
-            <ModalButton id='modalButton' className='animated fadeIn'>
+            <ModalButton id='modalButton'>
               CONTINUAR
             </ModalButton>
           </section>
