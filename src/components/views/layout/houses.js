@@ -4,17 +4,26 @@ import HouseImage from '../ui-elements/HouseImage'
 const Houses = () => (
   <div className='container'>
     <HouseImage>
-      <img src='/img/house0.png' className='house has-text-centered' />
+      <img
+        src='/img/house0.png'
+        className='house has-text-centered'
+        alt='Casa Baratheon'
+      />
       <img
         src='/img/house1.png'
         className='house has-text-centered p-b-20 m-r-64 scale3'
+        alt='Casa Targaryen'
       />
       <img
         src='/img/house2.png'
         className='house has-text-centered p-b-32 m-r-64 scale6'
+        alt='Casa Stark'
       />
-      <img src='/img/house3.png' className='house has-text-centered' />
-      <img src='/img/4houses.jpg' className='mobileHouses' />
+      <img
+        src='/img/house3.png'
+        className='house has-text-centered p-b-32 m-r-64 scale6'
+        alt='Casa Lannister'
+      />
     </HouseImage>
 
   </div>

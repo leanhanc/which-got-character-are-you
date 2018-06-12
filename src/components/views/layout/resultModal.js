@@ -31,7 +31,7 @@ class Modal extends React.Component {
                 <h2 className='gotFont p-b-32 is-size-4 has-text-centered'>
                   {character.name}
                 </h2>
-                <img src={character.pic} />
+                <img src={character.pic} alt={character.name} />
                 <br />
                 <span>
                   <i className='has-text-grey-light is-size-6'>
