@@ -8,7 +8,7 @@ class questionContainer extends Component {
   userAnswerHandler = e => {
     const valueToCompute = e.target.name
     this.props.computeAnswer(valueToCompute)
-    const secuenceNum = this.props
+    const { secuenceNum } = this.props
     // Agregar un delay de entrada a la primer respuesta de una pregunta nueva
     if (secuenceNum === 5 || secuenceNum === 11 || secuenceNum === 17) {
       document.querySelector('.respuesta').style.visibility = 'hidden'
