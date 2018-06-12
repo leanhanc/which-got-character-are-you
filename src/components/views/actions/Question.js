@@ -2,20 +2,13 @@ import React, { Component } from 'react'
 
 class Question extends Component {
   componentDidUpdate () {
-    // Chequear si va a cambiar la pregunta, entonces quitar clase de slideIn para permitir agregarla
-    if (
-      this.props.secuenceNum === 5 ||
-      this.props.secuenceNum === 11 ||
-      this.props.secuenceNum === 17
-    ) {
+    const { secuenceNum } = this.props
+    // Chequear si va a cambiar la pregunta, entonces quitar clase slideIn para permitir agregarla
+    if (secuenceNum === 5 || secuenceNum === 11 || secuenceNum === 17) {
       let get = document.getElementsByClassName('pregunta')
       get[0].classList.remove('slideInLeft')
     }
-    if (
-      this.props.secuenceNum === 6 ||
-      this.props.secuenceNum === 12 ||
-      this.props.secuenceNum === 18
-    ) {
+    if (secuenceNum === 6 || secuenceNum === 12 || secuenceNum === 18) {
       let get = document.getElementsByClassName('pregunta')
       get[0].classList.add('slideInLeft')
     }
@@ -31,9 +24,7 @@ class Question extends Component {
     if (enunciadoActual >= 12 && enunciadoActual < 18) {
       return 'q3'
     }
-    if (enunciadoActual >= 18 && enunciadoActual < 6) {
-      return 'q4'
-    }
+    return 'q4'
   }
   render () {
     const { secuenceNum: count, preguntas } = this.props
