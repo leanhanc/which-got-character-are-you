@@ -72,7 +72,7 @@ class PostgameContainer extends Component {
         object: {
           'og:url': 'https://testgot.now.sh/',
           'og:title': '¿Quién sos en Game of Thrones?',
-          'og:description': 'Hice el para saber qué personaje de GOT soy y me salió: "' +
+          'og:description': 'Hice el test para saber qué personaje de GOT soy y me salió: "' +
             result +
             '"',
           'og:image:type': 'image/jpg',
