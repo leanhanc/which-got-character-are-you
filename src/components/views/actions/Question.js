@@ -13,6 +13,7 @@ class Question extends Component {
       get[0].classList.add('slideInLeft')
     }
   }
+
   currentQuestion = props => {
     const { secuenceNum: enunciadoActual } = this.props
     if (enunciadoActual >= 0 && enunciadoActual < 6) {
@@ -26,8 +27,9 @@ class Question extends Component {
     }
     return 'q4'
   }
+
   render () {
-    const { secuenceNum: count, preguntas } = this.props
+    const { preguntas } = this.props
     const renderQ = this.currentQuestion()
 
     return (
@@ -35,6 +37,7 @@ class Question extends Component {
         <p className='has-text-centered q'>
           {preguntas[renderQ]}
         </p>
+
       </div>
     )
   }

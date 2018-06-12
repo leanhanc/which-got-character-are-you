@@ -65,26 +65,21 @@ class PostgameContainer extends Component {
 
   postToFacebook = props => {
     let result = this.getResult()
-    FB.ui(
-      {
-        method: 'share_open_graph',
-        action_type: 'og.shares',
-        action_properties: JSON.stringify({
-          object: {
-            'og:url': 'https://testgot.now.sh/',
-            'og:title': '¿Quién sos en Game of Thrones?',
-            'og:description': 'Hice el para saber qué personaje de GOT soy y me salió: "' +
-              result +
-              '"',
-            'og:image:type': 'image/jpg',
-            'og:image': `https://testgot.now.sh/${this.props.characterProfile.share}`
-          }
-        })
-      },
-      function (response) {
-        console.log(response)
-      }
-    )
+    FB.ui({
+      method: 'share_open_graph',
+      action_type: 'og.shares',
+      action_properties: JSON.stringify({
+        object: {
+          'og:url': 'https://testgot.now.sh/',
+          'og:title': '¿Quién sos en Game of Thrones?',
+          'og:description': 'Hice el para saber qué personaje de GOT soy y me salió: "' +
+            result +
+            '"',
+          'og:image:type': 'image/jpg',
+          'og:image': `https://testgot.now.sh/${this.props.characterProfile.share}`
+        }
+      })
+    })
   }
 
   postToTwitter = props => {
