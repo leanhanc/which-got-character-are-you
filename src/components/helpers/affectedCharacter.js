@@ -1,23 +1,11 @@
-let afectado = QNum => {
-  switch (true) {
-    case QNum === 1 || QNum === 11 || QNum === 13 || QNum === 22:
-      return 'TL'
+const afectado = QNum => {
+  if ([1, 11, 13, 22].includes(QNum)) return 'TL'
+  if ([2, 8, 12, 21].includes(QNum)) return 'DT'
+  if ([3, 10, 16, 19].includes(QNum)) return 'CL'
+  if ([4, 9, 14, 23].includes(QNum)) return 'PB'
+  if ([5, 7, 17, 18].includes(QNum)) return 'SS'
 
-    case QNum === 2 || QNum === 8 || QNum === 12 || QNum === 21:
-      return 'DT'
-
-    case QNum === 3 || QNum === 10 || QNum === 16 || QNum === 19:
-      return 'CL'
-
-    case QNum === 4 || QNum === 9 || QNum === 14 || QNum === 23:
-      return 'PB'
-
-    case QNum === 5 || QNum === 7 || QNum === 17 || QNum === 18:
-      return 'SS'
-
-    default:
-      return 'JS'
-  }
+  return 'JS'
 }
 
 export default afectado

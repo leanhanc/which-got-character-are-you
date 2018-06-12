@@ -6,16 +6,11 @@ import OptionButton from '../ui-elements/optionButton'
 
 class questionContainer extends Component {
   userAnswerHandler = e => {
-    let valueToCompute = e.target.name
+    const valueToCompute = e.target.name
     this.props.computeAnswer(valueToCompute)
-
+    const secuenceNum = this.props
     // Agregar un delay de entrada a la primer respuesta de una pregunta nueva
-
-    if (
-      this.props.secuenceNum === 5 ||
-      this.props.secuenceNum === 11 ||
-      this.props.secuenceNum === 17
-    ) {
+    if (secuenceNum === 5 || secuenceNum === 11 || secuenceNum === 17) {
       document.querySelector('.respuesta').style.visibility = 'hidden'
       setTimeout(() => {
         document.querySelector('.respuesta').style.visibility = 'visible'
@@ -25,10 +20,10 @@ class questionContainer extends Component {
     }
 
     // Agregar clase de fadeIn en la respuesta y removerla
-    if (this.props.secuenceNum < 25) {
+    if (secuenceNum < 25) {
       document.querySelector('.respuesta').classList.remove('fadeInRight')
       document.querySelector('.respuesta').classList.add('fadeIn')
-      if (this.props.secuenceNum < 25) {
+      if (secuenceNum < 25) {
         window.setTimeout(() => {
           if (document.querySelector('.respuesta') !== null) {
             document.querySelector('.respuesta').classList.remove('fadeIn')

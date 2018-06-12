@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 class Answer extends Component {
   render () {
     const { answerNumRender, characterResponses } = this.props
+
     const className =
       'has-text-centered p-t-20 has-text-weight-bold respuesta animated'
 
