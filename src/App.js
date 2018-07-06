@@ -80,6 +80,7 @@ class Root extends Component {
 
   beginGame = event => {
     this.setState(prevState => ({
+      ...prevState,
       startGame: true
     }))
     window.setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 300)
@@ -116,10 +117,7 @@ class Root extends Component {
       .then(() => {
         const showModal = { showModal: true }
         this.setState(showModal)
-        window.setTimeout(
-          () => document.getElementById('postgame').scrollIntoView(),
-          300
-        )
+        window.setTimeout(() => document.getElementById('postgame'), 300)
       })
       .catch(e => console.log(e))
   }

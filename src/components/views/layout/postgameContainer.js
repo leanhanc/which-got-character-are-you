@@ -6,6 +6,9 @@ import ResultModal from './resultModal'
 import OptionButton from '../ui-elements/optionButton'
 
 class PostgameContainer extends Component {
+  postgameDivElement = React.createRef()
+  devolucionH1Element = React.createRef()
+
   posiciones = this.props.finalPositions()
 
   componentDidMount () {
@@ -60,7 +63,7 @@ class PostgameContainer extends Component {
   }
 
   getResult () {
-    return document.getElementById('devolucion').textContent
+    return this.devolucionH1Element.textContent
   }
 
   postToFacebook = props => {
@@ -97,10 +100,18 @@ class PostgameContainer extends Component {
   }
   render () {
     return (
-      <section id='postgame' className='mapa hero is-fullheight'>
+      <section
+        id='postgame'
+        className='mapa hero is-fullheight'
+        ref={this.postgameDivElement}
+      >
         <div className='hero-body'>
           <div className='container has-text-centered'>
-            <h1 className='title has-text-white' id='devolucion'>
+            <h1
+              className='title has-text-white'
+              id='devolucion'
+              ref={this.devolucionH1Element}
+            >
               Sos {' '}
               <span className='Cinzel has-font-has-text-weight-bold '>
                 {transformName(this.posiciones[5])}.

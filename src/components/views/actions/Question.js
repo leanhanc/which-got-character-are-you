@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 
 class Question extends Component {
+  elementoDOMPregunta = React.createRef()
+
   componentDidUpdate () {
     const { secuenceNum } = this.props
     // Chequear si va a cambiar la pregunta, entonces quitar clase slideIn para permitir agregarla
     if (secuenceNum === 5 || secuenceNum === 11 || secuenceNum === 17) {
-      let get = document.getElementsByClassName('pregunta')
-      get[0].classList.remove('slideInLeft')
+      let get = this.elementoDOMPregunta
+      get.current.classList.remove('slideInLeft')
     }
     if (secuenceNum === 6 || secuenceNum === 12 || secuenceNum === 18) {
-      let get = document.getElementsByClassName('pregunta')
-      get[0].classList.add('slideInLeft')
+      let get = this.elementoDOMPregunta
+      get.current.classList.add('slideInLeft')
     }
   }
 
@@ -33,7 +35,10 @@ class Question extends Component {
     const renderQ = this.currentQuestion()
 
     return (
-      <div className='pregunta animated slideInLeft'>
+      <div
+        className='pregunta animated slideInLeft'
+        ref={this.elementoDOMPregunta}
+      >
         <p className='has-text-centered q'>
           {preguntas[renderQ]}
         </p>

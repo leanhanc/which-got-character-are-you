@@ -16,7 +16,7 @@ const Houses = () => (
         alt=''
       />
       <img src='/img/house3.png' className='house has-text-centered' alt='' />
-      <img src='/img/4houses.jpg' className='mobileHouses' />
+      <img src='/img/4houses.jpg' className='mobileHouses' alt='' />
     </HouseImage>
 
   </div>
