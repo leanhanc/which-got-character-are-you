@@ -1,5 +1,5 @@
 {
-  "alias": "test-got",
+  "alias": ["test-got", "testgot"],
   "type": "static",
   "static": {
     "rewrites": [
