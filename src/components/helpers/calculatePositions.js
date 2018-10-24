@@ -1,6 +1,6 @@
-let calculatePositions = someArrayorObj => {
-  return Object.keys(someArrayorObj).sort((a, b) => {
-    return someArrayorObj[a] - someArrayorObj[b]
+let calculatePositions = sortObject => {
+  return Object.keys(sortObject).sort((a, b) => {
+    return sortObject[a] - sortObject[b]
   })
 }
 
