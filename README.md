@@ -4,4 +4,4 @@
 
 <hr>
 
-<a href="https://testgot.now.sh">Probar</a>
+<a href="https://test-got.now.sh">Probar</a>
