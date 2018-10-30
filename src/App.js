@@ -6,16 +6,20 @@ import QuestionContainer from './components/views/layout/questionContainer'
 import PostgameContainer from './components/views/layout/postgameContainer'
 import MedievalOrnaments from './components/views/layout/ornaments'
 
-// Helpers
 
+// Preguntas, respuestas y datos de los personajes
+import questions from "./questions/"
+import characterResponses from "./characters/responses"
+import * as characterProfiles from "./characters/profiles"
+
+// Helpers
 import PersonajeAfectado from './components/helpers/affectedCharacter'
 import CalculatePositions from './components/helpers/calculatePositions'
 
-// Servicios
-import axios from 'axios'
-import { ThemeProvider } from 'styled-components'
+
 
 // Estilos
+import { ThemeProvider } from 'styled-components'
 import 'bulma/css/bulma.min.css'
 import './App.css'
 import 'animate.css/animate.min.css'
@@ -44,38 +48,21 @@ class Root extends Component {
   }
 
   // ! Lifecyle Hooks
-  componentDidMount () {
-    // ? Fetch all questions
-    this.fetchQuestions()
-    this.fetchCharacterResponses()
+  componentDidMount() {
+    // Get questions and set them to state
+    this.setQuestions(questions)
+    // Get the question answers
+    this.getCharacterResponses()
   }
 
   // ! Methods
 
-  fetchQuestions = () => {
-    const mongoLab = process.env.REACT_APP_APIKEY
-    axios
-      .get(
-        `https://api.mlab.com/api/1/databases/testgot/collections/questions?apiKey=${mongoLab}`
-      )
-      .then(response => {
-        const questions = response.data[0]
-        this.setState({ questions })
-      })
-      .catch(e => console.log(e))
+  setQuestions() {
+    this.setState({ questions })
   }
 
-  fetchCharacterResponses = () => {
-    const mongoLab = process.env.REACT_APP_APIKEY
-    axios
-      .get(
-        `https://api.mlab.com/api/1/databases/testgot/collections/character_responses?apiKey=${mongoLab}`
-      )
-      .then(response => {
-        const characterResponses = response.data[0]
-        this.setState({ characterResponses })
-      })
-      .catch(e => console.log(e))
+  getCharacterResponses = () => {
+    this.setState({ characterResponses })
   }
 
   beginGame = event => {
@@ -104,22 +91,17 @@ class Root extends Component {
     }
   }
 
-  fetchCharacterProfile (personajeGanador) {
-    const mongoLab = process.env.REACT_APP_APIKEY
-    axios
-      .get(
-        `https://api.mlab.com/api/1/databases/testgot/collections/character_profile?q={"initials":"${personajeGanador}"}&apiKey=${mongoLab}`
-      )
-      .then(response => {
-        const characterProfile = response.data[0]
-        this.setState({ characterProfile })
-      })
-      .then(() => {
-        const showModal = { showModal: true }
-        this.setState(showModal)
-        window.setTimeout(() => document.getElementById('postgame'), 300)
-      })
-      .catch(e => console.log(e))
+  getCharacterProfile(personajeGanador) {
+    // Buscar la bio del personaje que más se parece
+    this.setState({
+      characterProfile: {
+        ...characterProfiles[personajeGanador]
+      }
+    }, () => {
+      const showModal = { showModal: true }
+      this.setState(showModal)
+      window.setTimeout(() => document.getElementById('postgame'), 300)
+    })
   }
 
   finalPositions = () => {
@@ -131,7 +113,7 @@ class Root extends Component {
     let posicionesFinal = CalculatePositions(posiciones)
     // Se obtienen los datos del ganador para mostrarlos en el modal
     if (this.state.characterProfile.name === '') {
-      this.fetchCharacterProfile(posicionesFinal[5])
+      this.getCharacterProfile(posicionesFinal[5])
     }
     // Esconder los botones y mostrar devolución final
     const stopGame = { startGame: false }
@@ -140,14 +122,14 @@ class Root extends Component {
   }
   // ! Render
 
-  render () {
+  render() {
     return (
       <ThemeProvider theme={theme}>
         <div id='wrapper'>
           <MedievalOrnaments />
           <Header gameOn={this.state.startGame} begin={this.beginGame} />
           {this.state.startGame
-            ? <QuestionContainer
+            && <QuestionContainer
               secuenceNum={this.state.secuenceNum}
               totalSecuence={this.state.totalSecuence}
               preguntas={this.state.questions}
@@ -157,17 +139,17 @@ class Root extends Component {
               computeAnswer={this.computeAnswer}
               finalPositions={this.finalPositions}
               gameOver={this.gameOver}
-              />
-            : null}
+            />
+          }
           {this.state.gameOver
-            ? <section>
+            && <section>
               <PostgameContainer
                 characterProfile={this.state.characterProfile}
                 characterScore={this.state.characterScore}
                 finalPositions={this.finalPositions}
-                />
+              />
             </section>
-            : null}
+          }
         </div>
       </ThemeProvider>
     )
