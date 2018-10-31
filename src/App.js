@@ -120,6 +120,7 @@ class Root extends Component {
     this.setState(stopGame)
     return posicionesFinal
   }
+
   // ! Render
 
   render() {
