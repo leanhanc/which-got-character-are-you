@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App';
 import Header from '../components/views/layout/Header';
+import QuestionContainer from '../components/views/layout/questionContainer'
 import PostgameContainer from "../components/views/layout/postgameContainer"
 
 const boilerplate = () => {
@@ -31,11 +32,15 @@ describe('correct render the landing page', () => {
   })
 })
 
-describe('correcty start the game', () => {
-  test("it starts the game if user click the main button", () => {
-    expect(wrapped.find(Header).length).toEqual(1);
+describe('correctly starts the game', () => {
+  test("if the user dosen't click the start button, the game doesen't start",
+    () => {
+      expect(wrapped.find(QuestionContainer).length).toEqual(0)
+    })
+  test("start the game when the user clicks on the main button", () => {
+    wrapped.find("button").simulate("click")
+    expect(wrapped.find(QuestionContainer).length).toEqual(1)
   })
-
 })
 
 
