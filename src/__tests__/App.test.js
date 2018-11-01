@@ -37,7 +37,9 @@ describe("Render the result component only if the user answered all questions", 
 
   test("it does render when the game isn't over", () => {
     boilerplate()
+
     wrapped.setState({ gameOver: true })
+
     expect(wrapped.find(PostgameContainer).length).toEqual(1);
   })
 })
