@@ -21,10 +21,23 @@ afterEach(() => {
 });
 
 
-// App
-it('renders the landing page', () => {
-  expect(wrapped.find(Header).length).toEqual(1);
-});
+// Landing
+describe('correct render the landing page', () => {
+  test("it correctly renders the Header component", () => {
+    expect(wrapped.find(Header).length).toEqual(1);
+  })
+  test("it renders the title", () => {
+    expect(wrapped.text()).toContain("Thrones")
+  })
+})
+
+describe('correcty start the game', () => {
+  test("it starts the game if user click the main button", () => {
+    expect(wrapped.find(Header).length).toEqual(1);
+  })
+
+})
+
 
 
 // Postgame Container
