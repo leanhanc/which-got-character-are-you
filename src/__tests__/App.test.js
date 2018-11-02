@@ -53,11 +53,23 @@ describe("Render the result component only if the user answered all questions", 
   })
 
 
-  test("it does render when the game isn't over", () => {
+  test("it does render when the game is over", () => {
     boilerplate()
 
     wrapped.setState({ gameOver: true })
 
     expect(wrapped.find(PostgameContainer).length).toEqual(1);
   })
+})
+
+test("It should render the character with the most points", () => {
+  boilerplate()
+  wrapped.setState({ gameOver: true });
+
+  wrapped.setState({
+    characterScores:
+      { DT: 0, PB: 0, SS: 3, JS: 2, CL: 0, TL: 0 }
+  })
+
+  expect(wrapped.find("#winningCharacter").text()).toContain("Sansa Stark");
 })

@@ -11,7 +11,7 @@ class PostgameContainer extends Component {
 
   posiciones = this.props.finalPositions()
 
-  componentDidMount () {
+  componentDidMount() {
     window.fbAsyncInit = function () {
       FB.init({
         appId: '183788922213944',
@@ -20,40 +20,40 @@ class PostgameContainer extends Component {
         version: 'v2.11'
       })
     }
-    ;(function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0]
-      if (d.getElementById(id)) {
-        return
-      }
-      js = d.createElement(s)
-      js.id = id
-      js.src = 'https://connect.facebook.net/en_US/sdk.js'
-      fjs.parentNode.insertBefore(js, fjs)
-    })(document, 'script', 'facebook-jssdk')
+      ; (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id)) {
+          return
+        }
+        js = d.createElement(s)
+        js.id = id
+        js.src = 'https://connect.facebook.net/en_US/sdk.js'
+        fjs.parentNode.insertBefore(js, fjs)
+      })(document, 'script', 'facebook-jssdk')
   }
 
-  restart () {
+  restart() {
     window.location.reload()
   }
 
   getDifference = props => {
     if (
       this.props.characterScore[this.posiciones[5]] -
-        this.props.characterScore[this.posiciones[4]] ===
+      this.props.characterScore[this.posiciones[4]] ===
       0
     ) {
       return 'te parecés muchísimo a '
     }
     if (
       this.props.characterScore[this.posiciones[5]] -
-        this.props.characterScore[this.posiciones[4]] ===
+      this.props.characterScore[this.posiciones[4]] ===
       1
     ) {
       return 'te parecés mucho a '
     }
     if (
       this.props.characterScore[this.posiciones[5]] -
-        this.props.characterScore[this.posiciones[4]] ===
+      this.props.characterScore[this.posiciones[4]] ===
       2
     ) {
       return 'te parecés a'
@@ -62,7 +62,7 @@ class PostgameContainer extends Component {
     }
   }
 
-  getResult () {
+  getResult() {
     return this.devolucionH1Element.textContent
   }
 
@@ -98,7 +98,7 @@ class PostgameContainer extends Component {
       twitterWindow.focus()
     }
   }
-  render () {
+  render() {
     return (
       <section
         id='postgame'
@@ -113,7 +113,7 @@ class PostgameContainer extends Component {
               ref={this.devolucionH1Element}
             >
               Sos {' '}
-              <span className='Cinzel has-font-has-text-weight-bold '>
+              <span className='Cinzel has-font-has-text-weight-bold' id="winningCharacter">
                 {transformName(this.posiciones[5])}.
               </span><br /><br />
               <span>
