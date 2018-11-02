@@ -34,4 +34,4 @@ npm run start
 
 ## Licencia
 
-MIT - ver [LICENSE.md](LICENSE.md)
+MIT - ver [LICENSE.md](LICENSE.MD)
