@@ -1,12 +1,12 @@
 # ¿Quién sos en Game Of Thrones?
 
-Se te van a hacer cuatro preguntas y, dependendiendo del grado de acuerdo que manifiestes con cada una, recibís el personaje de <i>Game of Thrones</i>
+Se te van a hacer cuatro preguntas y, dependendiendo del grado de acuerdo que manifiestes con cada una, recibirás el personaje de <i>Game of Thrones</i>
 al que más te parecés en personalidad y filosofía.
 El resultado luego puede ser compartido directamente en Twitter y/o Facebook.
 
 ## Ejecutar online
 
-Para hacer el test, hacé <a href="http://test-got.now.sh" target="_blank" >clic acá</a>
+Para hacer el test, hacé <a href="http://test-got.now.sh" target="blank" >clic acá</a>
 
 ## Ejecutar localmente
 
