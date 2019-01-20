@@ -10,7 +10,6 @@ const houseImage = styled.div`
   padding-top: 1rem;
 }
 .house {
-  
   display: none
 }
 }
@@ -28,6 +27,7 @@ display:none
   margin: auto 32px;
   width: 95px;
   display: inline-block;
+  }
 }
 `
 

@@ -26,7 +26,7 @@ import 'animate.css/animate.min.css'
 import { theme } from './themeWrapper'
 
 class Root extends Component {
-  //! State
+  // ! State
   state = {
     characterScore: { DT: 0, PB: 0, TL: 0, JS: 0, CL: 0, SS: 0 },
     characterResponses: { cr_0: {}, cr_1: {}, cr_2: {}, cr_3: {} },
