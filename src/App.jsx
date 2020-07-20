@@ -4,7 +4,7 @@ import React, { useReducer } from 'react';
 import { initialState, appConfigActions, appConfigReducer } from './reducers/appConfig';
 
 // Pages
-import { Landing } from './pages';
+import Router from './router/Router';
 
 function App() {
   // State
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Landing lang={appUserSettings.lang} />
+      <Router lang={appUserSettings.lang} />
       <div>
         <button onClick={toggleLangHandler}>CAMBIAR IDIOMA</button>
         <button onClick={toggleThemeHandler}>CAMBIAR THEME</button>
