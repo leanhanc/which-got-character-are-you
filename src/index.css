@@ -1,3 +1,15 @@
+:root {
+  --primary-color: #b58107;
+  --bg-color: #eeeeee;
+  --font-color: #121212;
+}
+
+[data-theme='dark'] {
+  --primary-color: ##ebb042;
+  --bg-color: #121212;
+  --font-color: #f5f5f5;
+}
+
 @font-face {
   font-family: 'Inconsolata';
   src: local('Inconsolata'),
@@ -27,6 +39,8 @@ body {
   font-size: 100px;
   margin: 0;
   padding: 0;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 img,
