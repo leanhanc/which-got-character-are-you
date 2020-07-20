@@ -3,8 +3,8 @@ import React, { useReducer } from 'react';
 // Reducers
 import { initialState, appConfigActions, appConfigReducer } from './reducers/appConfig';
 
-// Enums
-import { LANG } from './utils/enums';
+// Pages
+import { Landing } from './pages';
 
 function App() {
   // State
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>{appUserSettings.lang === LANG.ES ? 'Hola' : 'Hello'}</header>
+      <Landing lang={appUserSettings.lang} />
       <div>
         <button onClick={toggleLangHandler}>CAMBIAR IDIOMA</button>
         <button onClick={toggleThemeHandler}>CAMBIAR THEME</button>
