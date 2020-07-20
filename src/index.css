@@ -1,21 +1,18 @@
-/* rest of app styles */
 @font-face {
-  font-family: "Inconsolata";
-  src: local("Inconsolata"),
-    url("./assets/fonts/Inconsolata/Inconsolata-Regular.ttf") format("truetype");
+  font-family: 'Inconsolata';
+  src: local('Inconsolata'),
+    url('./assets/fonts/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Cinzel";
-  src: local("Cinzel"),
-    url("./assets/fonts/Cinzel/CinzelRegular.ttf") format("truetype");
+  font-family: 'Cinzel';
+  src: local('Cinzel'), url('./assets/fonts/Cinzel/CinzelRegular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "GameOfThrones";
-  src: local("GameOfThrones"),
-    url("./assets/fonts/GameOfThrones/GameOfThronesRegular.ttf")
-      format("truetype");
+  font-family: 'GameOfThrones';
+  src: local('GameOfThrones'),
+    url('./assets/fonts/GameOfThrones/GameOfThronesRegular.ttf') format('truetype');
 }
 
 html {
@@ -26,7 +23,7 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: Inconsolata, "Times New Roman", Times, serif;
+  font-family: Inconsolata, 'Times New Roman', Times, serif;
   font-size: 100px;
   margin: 0;
   padding: 0;
