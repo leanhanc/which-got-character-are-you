@@ -17,10 +17,6 @@ function App() {
   return (
     <div className="App">
       <Router lang={appUserSettings.lang} />
-      <div>
-        <button onClick={toggleLangHandler}>CAMBIAR IDIOMA</button>
-        <button onClick={toggleThemeHandler}>CAMBIAR THEME</button>
-      </div>
     </div>
   );
 }
