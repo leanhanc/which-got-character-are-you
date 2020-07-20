@@ -9,9 +9,10 @@ import './Landing.css';
 
 function Landing({ lang }) {
   return (
-    <header id="Landing">
-      <h2 className="Landing-SmallHeader">QUIEN SOS</h2>
-      <h1 className="Landing-Header">GAME OF THRONES</h1>
+    <header id="landing">
+      <h2 className="landing-pre-header">QUIEN SOS EN</h2>
+      <h1 className="landing-header">GAME OF THRONES</h1>
+      <h3 className="landing-sub-header">HACE EL TEST Y ENTERATE</h3>
     </header>
   );
 }

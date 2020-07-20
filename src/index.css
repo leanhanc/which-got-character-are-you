@@ -1,11 +1,13 @@
 :root {
   --primary-color: #b58107;
+  --primary-dark-color: #a06906;
   --bg-color: #eeeeee;
   --font-color: #121212;
 }
 
 [data-theme='dark'] {
   --primary-color: #ebb042;
+  --primary-dark-color: #b58107;
   --bg-color: #121212;
   --font-color: #f5f5f5;
 }
@@ -17,7 +19,7 @@
 }
 
 @font-face {
-  font-family: 'Cinzel';
+  font-family: 'Cinzel-Regular';
   src: local('Cinzel'), url('./assets/fonts/Cinzel/CinzelRegular.ttf') format('truetype');
 }
 
