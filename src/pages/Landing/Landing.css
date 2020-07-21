@@ -6,6 +6,7 @@
   height: calc(var(--vh, 1vh) * 100);
   justify-content: center;
   overflow: hidden;
+  position: relative;
 
   @media screen and orientation landscape {
     height: 100%;

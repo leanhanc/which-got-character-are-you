@@ -1,0 +1,71 @@
+@keyframes topLeftRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes topRightRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes bottomRightRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes bottomLeftRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-135deg);
+  }
+}
+
+.ornament {
+  width: 75px;
+}
+
+.topLeft {
+  animation: topLeftRotate 1.5s ease forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.topRight {
+  animation: topRightRotate 1.5s ease forwards;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bottomLeft {
+  animation: bottomLeftRotate 1.5s ease forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bottomRight {
+  animation: bottomRightRotate 1.5s ease forwards;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

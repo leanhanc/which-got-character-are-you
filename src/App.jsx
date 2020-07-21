@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router lang={appUserSettings.lang} />
+      <Router lang={appUserSettings.lang} theme={appUserSettings.theme} />
     </div>
   );
 }
