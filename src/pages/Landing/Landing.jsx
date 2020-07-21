@@ -18,7 +18,7 @@ function Landing({ lang }) {
 }
 
 Landing.propTypes = {
-  lang: PropTypes.string,
+  lang: PropTypes.string.isRequired,
 };
 
 export default Landing;

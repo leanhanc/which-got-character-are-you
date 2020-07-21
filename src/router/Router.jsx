@@ -16,7 +16,7 @@ function Router({ lang }) {
 }
 
 Router.propTypes = {
-  lang: PropTypes.string,
+  lang: PropTypes.string.isRequired,
 };
 
 export default Router;
