@@ -17,7 +17,7 @@ function Landing({ lang, theme }) {
       <h2 className="landing-pre-header">QUIEN SOS EN</h2>
       <h1 className="landing-header">GAME OF THRONES</h1>
       <h3 className="landing-sub-header">HACE EL TEST Y ENTERATE</h3>
-      <Houses />
+      <Houses theme={theme} />
     </header>
   );
 }
