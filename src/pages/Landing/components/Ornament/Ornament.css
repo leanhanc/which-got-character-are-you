@@ -38,10 +38,6 @@
   }
 }
 
-.ornament {
-  width: 75px;
-}
-
 .topLeft {
   animation: topLeftRotate 1.5s ease forwards;
   position: absolute;
@@ -68,4 +64,20 @@
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.ornament {
+  width: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .ornament {
+    width: 75px;
+  }
+}
+
+@media screen and (max-height: 768px) and (orientation: landscape) {
+  .ornament {
+    width: 35px;
+  }
 }
