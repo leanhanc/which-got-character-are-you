@@ -1,7 +1,7 @@
 import { LANG, THEME } from '../utils/enums';
 
 export const initialState = {
-  theme: THEME.DARK,
+  theme: THEME.LIGHT,
   lang: LANG.ES,
 };
 
