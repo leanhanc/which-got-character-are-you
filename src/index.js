@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import './assets/fonts/GameOfThrones/GameOfThronesRegular.ttf';
 
 // Styles
+import 'react-toggle/style.css';
 import './index.css';
 
 ReactDOM.render(
