@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import { Header, Houses, Ornament } from './components';
+import { Header, Houses, Ornaments } from './components';
 
 // Styles
 import './Landing.css';
@@ -10,10 +10,7 @@ import './Landing.css';
 function Landing({ lang, theme }) {
   return (
     <main id="landing">
-      <Ornament theme={theme} type="topLeft" />
-      <Ornament theme={theme} type="topRight" />
-      <Ornament theme={theme} type="bottomLeft" />
-      <Ornament theme={theme} type="bottomRight" />
+      <Ornaments theme={theme} />
       <Header />
       <Houses theme={theme} />
     </main>
