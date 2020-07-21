@@ -20,7 +20,7 @@ function Ornament({ theme, type }) {
 
 Ornament.propTypes = {
   theme: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['top-right', 'top-left', 'bottom-left', 'bottom-right']).isRequired,
+  type: PropTypes.oneOf(['topRight', 'topLeft', 'bottomLeft', 'bottomRight']).isRequired,
 };
 
 export default Ornament;
