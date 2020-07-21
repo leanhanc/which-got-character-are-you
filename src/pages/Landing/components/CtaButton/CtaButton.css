@@ -55,3 +55,37 @@
   transform: skewX(-20deg);
   animation: shine 0.8s 0s linear;
 }
+
+@media not all and (pointer: coarse) {
+  .cta-button {
+    border: 2px solid var(--primary-dark-color);
+    outline: 0;
+  }
+
+  .cta-button:hover {
+    color: whitesmoke;
+    box-shadow: 0 0 10px 0 var(--primary-dark-color);
+    background-color: var(--primary-dark-color);
+    transition: all 0.2s ease-out;
+  }
+
+  .cta-button:hover:before {
+    animation: shine 0.7s 0s linear;
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: white;
+    box-shadow: 0 0 15px 3px white;
+    transform: skewX(-20deg);
+    animation: shine 0.8s 0s linear;
+  }
+  .cta-button:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+  }
+}

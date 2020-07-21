@@ -10,7 +10,8 @@ import './CtaButton.css';
 function CtaButton({ lang }) {
   // Effects
   useLayoutEffect(() => {
-    if (window.innerWidth < 1024) {
+    // If running on a touchscreen trigger animation automatically
+    if (window.matchMedia('(pointer: coarse)').matches) {
       setInterval(() => document.getElementById('cta-button').classList.toggle('hover'), 2000);
     }
   });
