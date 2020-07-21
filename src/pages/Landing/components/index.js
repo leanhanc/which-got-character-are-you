@@ -1,4 +1,5 @@
-import Ornament from './Ornament/Ornament';
+import Header from './Header/Header';
 import Houses from './Houses/Houses';
+import Ornament from './Ornament/Ornament';
 
-export { Houses, Ornament };
+export { Header, Houses, Ornament };
