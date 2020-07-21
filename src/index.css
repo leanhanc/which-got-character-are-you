@@ -24,6 +24,11 @@
 }
 
 @font-face {
+  font-family: 'Cinzel-Bold';
+  src: local('Cinzel-Bold'), url('./assets/fonts/Cinzel/CinzelBold.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'GameOfThrones';
   src: local('GameOfThrones'),
     url('./assets/fonts/GameOfThrones/GameOfThronesRegular.ttf') format('truetype');

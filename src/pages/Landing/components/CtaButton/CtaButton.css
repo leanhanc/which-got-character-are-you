@@ -1,0 +1,57 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.cta-button {
+  background-color: var(--primary-dark-color);
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 0 0 0 0 transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  font-family: Cinzel;
+  font-size: 1.8rem;
+  height: 6rem;
+  letter-spacing: 0.6rem;
+  margin-top: 8rem;
+  outline-color: var(--primary-color);
+  position: relative;
+  transition: all 0.2s ease-in;
+  width: 300px;
+}
+
+.cta-button:active {
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.cta-button.hover {
+  color: var(--text-color);
+  box-shadow: 0 0 10px 0 var(--primary-dark-color);
+  transition: all 0.3s ease-out;
+}
+
+.cta-button.hover::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: white;
+  box-shadow: 0 0 15px 3px white;
+  transform: skewX(-20deg);
+  animation: shine 0.8s 0s linear;
+}
