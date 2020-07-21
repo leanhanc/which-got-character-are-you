@@ -7,8 +7,10 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+}
 
-  @media screen and orientation landscape {
+@media screen and (max-height: 768px) and (orientation: landscape) {
+  #landing {
     height: 100%;
   }
 }
