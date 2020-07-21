@@ -1,0 +1,17 @@
+.houses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.houses img {
+  width: 45px;
+  padding-top: 4rem;
+  margin: auto 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .houses img {
+    width: 95px;
+  }
+}

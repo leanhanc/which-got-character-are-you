@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import { Ornament } from './components';
+import { Houses, Ornament } from './components';
 
 // Styles
 import './Landing.css';
@@ -17,6 +17,7 @@ function Landing({ lang, theme }) {
       <h2 className="landing-pre-header">QUIEN SOS EN</h2>
       <h1 className="landing-header">GAME OF THRONES</h1>
       <h3 className="landing-sub-header">HACE EL TEST Y ENTERATE</h3>
+      <Houses />
     </header>
   );
 }
