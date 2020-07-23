@@ -39,28 +39,28 @@
 }
 
 .topLeft {
-  animation: topLeftRotate 1.5s ease forwards;
+  animation: topLeftRotate 2s ease forwards;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .topRight {
-  animation: topRightRotate 1.5s ease forwards;
+  animation: topRightRotate 2s ease forwards;
   position: absolute;
   top: 0;
   right: 0;
 }
 
 .bottomLeft {
-  animation: bottomLeftRotate 1.5s ease forwards;
+  animation: bottomLeftRotate 2s ease forwards;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 .bottomRight {
-  animation: bottomRightRotate 1.5s ease forwards;
+  animation: bottomRightRotate 2s ease forwards;
   position: absolute;
   bottom: 0;
   right: 0;
