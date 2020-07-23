@@ -9,7 +9,7 @@ import './Landing.css';
 
 function Landing({ lang, theme, toggleLang, toggleTheme }) {
   return (
-    <main id="landing">
+    <main id="landing" className="fade-in">
       <Ornaments theme={theme} />
       <Header />
       <Houses theme={theme} />
