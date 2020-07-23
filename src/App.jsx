@@ -16,7 +16,12 @@ function App() {
 
   return (
     <div className="App">
-      <Router lang={appUserSettings.lang} theme={appUserSettings.theme} />
+      <Router
+        lang={appUserSettings.lang}
+        theme={appUserSettings.theme}
+        toggleLang={toggleLangHandler}
+        toggleTheme={toggleThemeHandler}
+      />
     </div>
   );
 }

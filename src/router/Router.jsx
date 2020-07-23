@@ -5,11 +5,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // Pages
 import { Landing } from '../pages';
 
-function Router({ lang, theme }) {
+function Router({ lang, theme, toggleLang, toggleTheme }) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing lang={lang} theme={theme} />} />
+        <Route
+          path="/"
+          element={
+            <Landing lang={lang} theme={theme} toggleTheme={toggleTheme} toggleLang={toggleLang} />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
@@ -18,6 +23,8 @@ function Router({ lang, theme }) {
 Router.propTypes = {
   lang: PropTypes.string.isRequired,
   theme: PropTypes.string.isRequired,
+  toggleLang: PropTypes.func.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Router;

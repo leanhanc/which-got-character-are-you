@@ -3,6 +3,7 @@
   --primary-dark-color: #a06906;
   --bg-color: #eeeeee;
   --font-color: #121212;
+  --font-accent-color: #727272;
 }
 
 [data-theme='dark'] {
@@ -10,6 +11,7 @@
   --primary-dark-color: #b58107;
   --bg-color: #121212;
   --font-color: #f5f5f5;
+  --font-accent-color: #cccccc;
 }
 
 @font-face {
@@ -43,7 +45,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: Inconsolata, 'Times New Roman', Times, serif;
-  font-size: 100px;
+  font-size: 10px;
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);

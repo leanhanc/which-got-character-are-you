@@ -1,0 +1,28 @@
+.user-options {
+  align-items: center;
+  display: flex;
+  margin-top: 6rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+  height: 70px;
+}
+
+.user-options__option-name {
+  color: var(--primary-dark-color);
+}
+
+.user-options__option-item {
+  cursor: pointer;
+  color: var(--font-accent-color);
+}
+
+.user-options__option-item--selected {
+  color: var(--font-color);
+}
+
+.user-options__selected-option-icon {
+  position: relative;
+  vertical-align: bottom;
+  width: 16px;
+}
