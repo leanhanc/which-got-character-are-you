@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'Cinzel-Regular';
-  src: local('Cinzel'), url('./assets/fonts/Cinzel/CinzelRegular.ttf') format('truetype');
+  src: local('Cinzel-Regular'), url('./assets/fonts/Cinzel/CinzelRegular.ttf') format('truetype');
 }
 
 @font-face {
