@@ -11,7 +11,7 @@ function Landing({ lang, theme, toggleLang, toggleTheme }) {
   return (
     <main id="landing" className="fade-in">
       <Ornaments theme={theme} />
-      <Header />
+      <Header lang={lang} />
       <Houses theme={theme} />
       <CtaButton lang={lang} />
       <UserOptions lang={lang} theme={theme} toggleLang={toggleLang} toggleTheme={toggleTheme} />
