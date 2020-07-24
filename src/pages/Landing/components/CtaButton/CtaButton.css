@@ -37,7 +37,7 @@
 }
 
 .cta-button.hover {
-  color: var(--text-color);
+  color: var(--font-color);
   box-shadow: 0 0 10px 0 var(--primary-dark-color);
   transition: all 0.3s ease-out;
 }
