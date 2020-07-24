@@ -1,3 +1,4 @@
-import FadeInAndOut from './FadeInAndOut';
+import FadeInAndOut from './FadeInAndOut/FadeInAndOut';
+import OptionButton from './OptionButton/OptionButton';
 
-export { FadeInAndOut };
+export { FadeInAndOut, OptionButton };
