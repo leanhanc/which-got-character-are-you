@@ -1,0 +1,24 @@
+.button-panel-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column;
+  margin-top: 8rem;
+}
+
+@media screen and (min-width: 769px) {
+  .button-panel-list {
+    flex-flow: row;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button-panel-list-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.button-panel-list-item {
+  list-style: none;
+}

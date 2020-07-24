@@ -1,3 +1,4 @@
-import Landing from './Landing/Landing.jsx';
+import Landing from './Landing/Landing';
+import Game from './Game/Game';
 
-export { Landing };
+export { Landing, Game };

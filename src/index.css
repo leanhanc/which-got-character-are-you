@@ -42,6 +42,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  line-height: 1.5;
 }
 
 body {
@@ -79,6 +80,12 @@ textarea {
 
 a  {
   text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 /* Headers */
@@ -128,6 +135,40 @@ a  {
   100% {
     opacity: 0;
   }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slide-in-right {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+}
+
+.slide-in-left {
+  animation-duration: 1s;
+  animation-name: slideInLeft;
 }
 
 .fade-in {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // Components
 import { CtaButton, Header, Houses, Ornaments, UserOptions } from './components';
@@ -13,7 +14,9 @@ function Landing({ lang, theme, toggleLang, toggleTheme }) {
       <Ornaments theme={theme} />
       <Header lang={lang} />
       <Houses theme={theme} />
-      <CtaButton lang={lang} />
+      <Link to="/game">
+        <CtaButton lang={lang} />
+      </Link>
       <UserOptions lang={lang} theme={theme} toggleLang={toggleLang} toggleTheme={toggleTheme} />
     </main>
   );

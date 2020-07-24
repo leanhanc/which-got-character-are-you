@@ -1,0 +1,22 @@
+.questions {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.questions-question {
+  color: var(--primary-dark-color);
+  font-family: Cinzel-Regular;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.questions-answers {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-align: center;
+}

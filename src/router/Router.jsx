@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Pages
-import { Landing } from '../pages';
+import { Landing, Game } from '../pages';
 
 function Router({ lang, theme, toggleLang, toggleTheme }) {
   return (
@@ -15,6 +15,7 @@ function Router({ lang, theme, toggleLang, toggleTheme }) {
             <Landing lang={lang} theme={theme} toggleTheme={toggleTheme} toggleLang={toggleLang} />
           }
         />
+        <Route path="/game" element={<Game lang={lang} />} />
       </Routes>
     </BrowserRouter>
   );
