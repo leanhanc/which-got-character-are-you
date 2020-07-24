@@ -12,7 +12,10 @@ function CtaButton({ lang }) {
   useLayoutEffect(() => {
     // If running on a touchscreen trigger animation automatically
     if (window.matchMedia('(pointer: coarse)').matches) {
-      setInterval(() => document.getElementById('cta-button').classList.toggle('hover'), 2000);
+      setInterval(() => {
+        const ctaButton = document.getElementById('cta-button');
+        if (ctaButton) ctaButton.classList.toggle('hover');
+      }, 2000);
     }
   });
 
