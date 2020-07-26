@@ -1,21 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Styles
 import './Questions.css';
 
-function Questions() {
+function Questions({ currentAnswer, currentQuestion }) {
   return (
     <div className="questions">
-      <h3 className="questions-question slide-in-left">
-        Si alguien te dice que tu pareja te es infiel, ¿qué harías?
-      </h3>
-      <p className="questions-answers slide-in-right">
-        Desestimaría la acusación porque confío en la persona que elegí.
-      </p>
+      <h3 className="questions-question slide-in-left">{currentQuestion}</h3>
+      <p className="questions-answers slide-in-right">{currentAnswer}</p>
     </div>
   );
 }
 
-Questions.propTypes = {};
+Questions.propTypes = {
+  currentAnswer: PropTypes.string.isRequired,
+  currentQuestion: PropTypes.string.isRequired,
+};
 
 export default Questions;

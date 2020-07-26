@@ -8,6 +8,8 @@
     flex-direction: column;
     height: 100vh;
     justify-content: space-evenly;
+    margin: auto;
+    max-width: 1200px;
     padding: 0;
   }
 }
