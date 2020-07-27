@@ -63,7 +63,7 @@ export default {
       ],
       [
         'I would join the military forces fighting for the independence.',
-        "It is hard for me to say. I'm not interested in politics all that much .",
+        "It is hard for me to say. I'm not interested in politics all that much.",
         'I see myself taking political initiative, trying to free slaves so they can join the rebel forces. Leadership comes easy to me.',
         'I would back de loyalists in case they win, but secretly sell weapons to the independentists.',
         "I wouldn't really care as long as my family emerges well positioned out of the conflict.",
