@@ -55,7 +55,7 @@ export default {
     answers: [
       [
         "I would disregard the accusation because I would trust the person I've chosen.",
-        "I might think that it could be truth and it probably would partly be my fault because that could mean I wouldn't have given my partner what he or she wanted or needed.",
+        "I might think that it could be true and it probably would partly be my fault because that could mean I wouldn't have given my partner what he or she wanted or needed.",
         'I would confront my partner, tell him or her to look me in the eyes and ask for the truth.',
         "I would watch carefully each step he or she takes. I would look for proof, and if I find out it is truth, I would see how to get revenge. You don't mess with me.",
         'It may be true or not, but the first thing I would do is contemplate who is telling me that. Maybe it is an interested party that wants my partner to be free of commitments.',
