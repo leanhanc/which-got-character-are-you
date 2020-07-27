@@ -26,6 +26,7 @@
 }
 
 .option-button:active {
+  color: #eeeeee;
   background-color: var(--primary-dark-color);
   transform: scale(1.1);
 }
