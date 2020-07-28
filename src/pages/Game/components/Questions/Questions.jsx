@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 // Helpers
-import { firstAnswerOfStep, lastAnswerOfStep } from '../../Game.helpers';
+import { lastAnswerOfStep } from '../../Game.helpers';
 
 // Styles
 import './Questions.css';
