@@ -6,6 +6,7 @@ import { gameActions, gameReducer, initialState } from '../../reducers/game.js';
 
 // Components
 import { Questions, ButtonPanel } from './components';
+import { Line } from 'rc-progress';
 
 // Locale
 import data from '../../data/locale';
@@ -17,6 +18,7 @@ import {
   lastAnswerOfStep,
   petyrAnswers,
   sansaAnswers,
+  totalAnswers,
   tyrionsAnswers,
 } from './Game.helpers';
 
@@ -36,6 +38,10 @@ function Game({ lang }) {
     () => data[lang].answers[gameState.step][gameState.answer - gameState.step * 6],
     [gameState.answer, gameState.step, lang],
   );
+
+  const currentGameProgress = useMemo(() => {
+    return (gameState.answer * 100) / totalAnswers;
+  }, [gameState.answer]);
 
   // Handlers
   const handleUserAnswer = (answerType = '') => {
@@ -85,6 +91,7 @@ function Game({ lang }) {
         currentQuestionText={currentQuestionText}
       />
       <ButtonPanel handleUserAnswer={handleUserAnswer} />
+      <Line className="game-progress-bar" strokeColor="#a06906" percent={currentGameProgress} />
     </section>
   );
 }

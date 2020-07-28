@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-evenly;
   flex-flow: column;
-  margin-top: 8rem;
 }
 
 @media screen and (min-width: 769px) {
