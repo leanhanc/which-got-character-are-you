@@ -79,7 +79,11 @@ function Game({ lang }) {
         <h2 className="header-pre-header">{data[lang].preHeader}</h2>
         <h1 className="header-main-header">GAME OF THRONES</h1>
       </header>
-      <Questions currentQuestion={currentQuestionText} currentAnswer={currentAnswerText} />
+      <Questions
+        currentAnswerIndex={gameState.answer}
+        currentAnswerText={currentAnswerText}
+        currentQuestionText={currentQuestionText}
+      />
       <ButtonPanel handleUserAnswer={handleUserAnswer} />
     </section>
   );
