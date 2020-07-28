@@ -1,8 +1,8 @@
-import React, { useMemo, useReducer } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 // Reducer
-import { gameActions, gameReducer, initialState } from '../../reducers/game.js';
+import { gameActions } from '../../reducers/game.js';
 
 // Components
 import { Questions, ButtonPanel } from './components';
@@ -25,55 +25,48 @@ import {
 // Styles
 import './Game.css';
 
-function Game({ lang }) {
-  const [gameState, dispatch] = useReducer(gameReducer, initialState);
-
+function Game({ lang, gameStateHandler, answer, step }) {
   // Helpers
-  const currentQuestionText = useMemo(() => data[lang].questions[gameState.step], [
-    gameState.step,
-    lang,
-  ]);
+  const currentQuestionText = useMemo(() => data[lang].questions[step], [step, lang]);
 
   const currentAnswerText = useMemo(() => {
-    return data[lang].answers?.[gameState.step]?.[gameState.answer - gameState.step * 6] || '';
-  }, [gameState.answer, gameState.step, lang]);
+    return data[lang].answers?.[step]?.[answer - step * 6] || '';
+  }, [answer, step, lang]);
 
   const currentGameProgress = useMemo(() => {
-    return (gameState.answer * 100) / totalAnswers;
-  }, [gameState.answer]);
+    return (answer * 100) / totalAnswers;
+  }, [answer]);
 
   // Handlers
   const handleUserAnswer = (answerType = '') => {
-    const { answer } = gameState;
-
-    if (lastAnswerOfStep.includes(answer)) dispatch({ type: gameActions.INCREMENT_STEP });
+    if (lastAnswerOfStep.includes(answer)) gameStateHandler({ type: gameActions.INCREMENT_STEP });
 
     if (answer <= totalAnswers - 1) {
-      dispatch({ type: gameActions.INCREMENT_ANSWER });
+      gameStateHandler({ type: gameActions.INCREMENT_ANSWER });
     }
 
     if (jonAnswers.includes(answer)) {
-      dispatch({ type: gameActions[`JON_${answerType}`] });
+      gameStateHandler({ type: gameActions[`JON_${answerType}`] });
       return;
     }
     if (tyrionsAnswers.includes(answer)) {
-      dispatch({ type: gameActions[`TYRION_${answerType}`] });
+      gameStateHandler({ type: gameActions[`TYRION_${answerType}`] });
       return;
     }
     if (daenerysAnswers.includes(answer)) {
-      dispatch({ type: gameActions[`DAENERYS_${answerType}`] });
+      gameStateHandler({ type: gameActions[`DAENERYS_${answerType}`] });
       return;
     }
     if (cerseiAnswers.includes(answer)) {
-      dispatch({ type: gameActions[`CERSEI_${answerType}`] });
+      gameStateHandler({ type: gameActions[`CERSEI_${answerType}`] });
       return;
     }
     if (petyrAnswers.includes(answer)) {
-      dispatch({ type: gameActions[`PETYR_${answerType}`] });
+      gameStateHandler({ type: gameActions[`PETYR_${answerType}`] });
       return;
     }
 
-    dispatch({ type: gameActions[`SANSA_${answerType}`] });
+    gameStateHandler({ type: gameActions[`SANSA_${answerType}`] });
   };
 
   return (
@@ -83,7 +76,7 @@ function Game({ lang }) {
         <h1 className="header-main-header">GAME OF THRONES</h1>
       </header>
       <Questions
-        currentAnswerIndex={gameState.answer}
+        currentAnswerIndex={answer}
         currentAnswerText={currentAnswerText ?? ''}
         currentQuestionText={currentQuestionText ?? ''}
       />
@@ -94,7 +87,10 @@ function Game({ lang }) {
 }
 
 Game.propTypes = {
+  answer: PropTypes.number.isRequired,
+  gameStateHandler: PropTypes.func.isRequired,
   lang: PropTypes.string.isRequired,
+  step: PropTypes.number.isRequired,
 };
 
 export default Game;
