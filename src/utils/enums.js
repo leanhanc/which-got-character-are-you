@@ -4,6 +4,6 @@ export const THEME = {
 };
 
 export const LANG = {
-  ES: 'spanish',
-  EN: 'english',
+  ES: 'ES',
+  EN: 'EN',
 };
