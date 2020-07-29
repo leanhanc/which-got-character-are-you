@@ -27,6 +27,7 @@ function App() {
     <div className="App">
       <Router
         answer={gameState.answer}
+        characterScore={gameState.characterScore}
         gameStateHandler={gameStateHandler}
         lang={appUserSettings.lang}
         step={gameState.step}

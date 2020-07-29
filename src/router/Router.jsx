@@ -3,9 +3,18 @@ import PropTypes from 'prop-types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Pages
-import { Landing, Game } from '../pages';
+import { Landing, Game, Postgame } from '../pages';
 
-function Router({ answer, lang, theme, gameStateHandler, step, toggleLang, toggleTheme }) {
+function Router({
+  answer,
+  characterScore,
+  lang,
+  theme,
+  gameStateHandler,
+  step,
+  toggleLang,
+  toggleTheme,
+}) {
   return (
     <BrowserRouter>
       <Routes>
@@ -18,8 +27,19 @@ function Router({ answer, lang, theme, gameStateHandler, step, toggleLang, toggl
         <Route
           path="/game"
           element={
-            <Game answer={answer} step={step} gameStateHandler={gameStateHandler} lang={lang} />
+            <Game
+              answer={answer}
+              characterScore={characterScore}
+              characterScorestep={step}
+              gameStateHandler={gameStateHandler}
+              lang={lang}
+              step={step}
+            />
           }
+        />
+        <Route
+          path="/postgame"
+          element={<Postgame characterScore={characterScore} lang={lang} />}
         />
       </Routes>
     </BrowserRouter>
@@ -28,6 +48,7 @@ function Router({ answer, lang, theme, gameStateHandler, step, toggleLang, toggl
 
 Router.propTypes = {
   answer: PropTypes.number.isRequired,
+  characterScore: PropTypes.object.isRequired,
   gameStateHandler: PropTypes.func.isRequired,
   lang: PropTypes.string.isRequired,
   step: PropTypes.number.isRequired,

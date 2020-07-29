@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 // Reducer
 import { gameActions } from '../../reducers/game.js';
@@ -15,8 +16,8 @@ import data from '../../data/locale';
 import {
   cerseiAnswers,
   daenerysAnswers,
-  lastAnswerOfStep,
   jonAnswers,
+  lastAnswerOfStep,
   petyrAnswers,
   totalAnswers,
   tyrionsAnswers,
@@ -26,6 +27,8 @@ import {
 import './Game.css';
 
 function Game({ lang, gameStateHandler, answer, step }) {
+  // Hooks
+  const navigate = useNavigate();
   // Helpers
   const currentQuestionText = useMemo(() => data[lang].questions[step], [step, lang]);
 
@@ -37,7 +40,6 @@ function Game({ lang, gameStateHandler, answer, step }) {
     return (answer * 100) / totalAnswers;
   }, [answer]);
 
-  // Handlers
   const handleUserAnswer = (answerType = '') => {
     if (lastAnswerOfStep.includes(answer)) gameStateHandler({ type: gameActions.INCREMENT_STEP });
 
@@ -68,6 +70,13 @@ function Game({ lang, gameStateHandler, answer, step }) {
 
     gameStateHandler({ type: gameActions[`SANSA_${answerType}`] });
   };
+
+  // Effects
+  useEffect(() => {
+    if (answer === totalAnswers) {
+      navigate('/postgame');
+    }
+  }, [answer, navigate]);
 
   return (
     <section id="Game" className="game">

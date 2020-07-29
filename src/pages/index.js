@@ -1,4 +1,5 @@
 import Landing from './Landing/Landing';
 import Game from './Game/Game';
+import Postgame from './Postgame/Postgame';
 
-export { Landing, Game };
+export { Landing, Game, Postgame };
