@@ -1,0 +1,33 @@
+.modal {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+
+.modal-body {
+  background-blend-mode: multiply;
+  background-color: var(--primary-dark-color);
+  background-image: url('../../../../assets/images/parchment.jpg');
+  background-size: cover;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+  padding: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  .modal {
+    margin: 0 auto;
+    width: 640px;
+  }
+}
+
+.postgame-modal-character-profile__bio {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  align-self: center;
+}

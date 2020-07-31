@@ -9,11 +9,13 @@
   cursor: pointer;
   display: block;
   font-size: 11px;
-  line-height: 1.75;
   font-weight: bolder;
   letter-spacing: 2px;
-  padding: 1.5rem 0px;
+  line-height: 1.75;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2rem;
+  padding: 1.5rem 0px;
   transition: all 150ms linear;
   width: 175px;
 }
@@ -33,4 +35,13 @@
 
 .option-button:focus {
   outline: 0;
+}
+
+.secondary:hover {
+  background-color: transparent;
+  border-color: var(--font-accent-color) !important;
+}
+
+.secondary:active {
+  background-color: transparent;
 }

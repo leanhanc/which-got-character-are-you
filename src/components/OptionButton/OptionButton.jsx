@@ -4,7 +4,20 @@ import PropTypes from 'prop-types';
 // Styles
 import './OptionButton.css';
 
-function OptionButton({ children, onClick }) {
+const VARIANT = {
+  primary: 'primary',
+  secondary: 'secondary',
+};
+
+function OptionButton({ children, onClick, variant }) {
+  if (variant === VARIANT.secondary) {
+    return (
+      <button className="option-button secondary" onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+
   return (
     <button className="option-button" onClick={onClick}>
       {children}
@@ -15,6 +28,11 @@ function OptionButton({ children, onClick }) {
 OptionButton.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func.isRequired,
+  variant: PropTypes.oneOf(['primary', 'secondary']),
+};
+
+OptionButton.defaultProps = {
+  variant: 'primary',
 };
 
 export default OptionButton;

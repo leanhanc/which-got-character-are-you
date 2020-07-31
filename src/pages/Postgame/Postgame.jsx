@@ -1,58 +1,84 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Modal from 'react-modal';
+
+// Components
+import { Modal } from './components';
+import { OptionButton } from '../../components';
 
 // Helpers
-import { calculateCharacterPositions, buildTextResult } from './Postgame.helpers';
+import {
+  calculateCharacterPositions,
+  buildResultInfo,
+  getFullCharacterInfo,
+} from './Postgame.helpers';
+
+// Locale
+import data from '../../data/locale';
 
 // Styles
 import './Postgame.css';
 
-Modal.setAppElement('#root');
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
 function Postgame({ characterScore, lang }) {
   // Local State
-  const [mainResult, setMainResult] = useState('');
-  const [resultExtraInfo, setResultExtraInfo] = useState('');
+  const [shouldShowModal, setShouldShowModal] = useState(true);
+  const [isCharacter, setIsCharacter] = useState('');
+  const [isCloseTo, setIsCloseTo] = useState('');
+  const [isFarFrom, setIsFarFrom] = useState('');
+  const [characterProfilePic, setCharacterProfilePic] = useState('');
 
   // Refs
   const scoreRef = useRef(characterScore);
-  const langRef = useRef(lang);
 
   // Helpers
-  const shouldShowModal = mainResult && resultExtraInfo;
+  const isResultDataPresent = Boolean(isCharacter && isCloseTo && isFarFrom);
+  const { fullName, alias } = getFullCharacterInfo(isCharacter);
+
+  // Handlers
+  const closeModal = () => setShouldShowModal(false);
 
   // Effects
   useEffect(() => {
     const characterPositions = calculateCharacterPositions(scoreRef.current);
-    const resultText = buildTextResult(characterPositions);
+    const { farFrom, isLike, closeTo } = buildResultInfo(characterPositions);
 
-    setMainResult(resultText.main[langRef.current]);
-    setResultExtraInfo(resultText.extra[langRef.current]);
+    setIsCharacter(isLike);
+    setIsCloseTo(closeTo);
+    setIsFarFrom(farFrom);
+    import(`../../assets/images/${isLike}.jpg`).then((pic) => setCharacterProfilePic(pic.default));
   }, []);
 
   return (
     <div id="Postgame" className="postgame">
-      <Modal
-        isOpen={shouldShowModal}
-        overlayClassName="postgame-modal-overlay"
-        className="postgame-modal-content"
-      >
-        <h3>{mainResult}</h3>
-        <h5>{resultExtraInfo}</h5>
-      </Modal>
-      <h1>POSTGAME PAGE</h1>
+      {isResultDataPresent && shouldShowModal && (
+        <Modal>
+          <div className="postgame-modal-character-profile">
+            <div className="cpostgame-modal-character-profile__profile-container">
+              <h2 className="postgame-modal-character-profile__full-name">{fullName}</h2>
+              <figure>
+                {characterProfilePic && (
+                  <img
+                    src={characterProfilePic}
+                    alt={fullName}
+                    className="postgame-modal-character-profile__pic"
+                  />
+                )}
+                <figcaption className="postgame-modal-character-profile__caption">
+                  {alias[lang]}
+                </figcaption>
+              </figure>
+            </div>
+            <div className="postgame-modal-character-profile__bio">
+              {data[lang].character[isCharacter].bio}
+            </div>
+          </div>
+          <blockquote className="postgame-modal-character-dixit">
+            "{data[lang].character[isCharacter].dixit}"
+          </blockquote>
+          <OptionButton variant="secondary" onClick={closeModal}>
+            CONTINUAR
+          </OptionButton>
+        </Modal>
+      )}
     </div>
   );
 }

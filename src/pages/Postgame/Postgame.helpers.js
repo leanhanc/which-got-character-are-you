@@ -21,19 +21,66 @@ const getDifference = (characterScore = []) => {
   }
 };
 
-export const buildTextResult = (characterPositions = []) => {
+export const getFullCharacterInfo = (characterFirstName = '') => {
+  if (characterFirstName === 'tyrion') {
+    return {
+      fullName: 'Tyrion Lannister',
+      alias: {
+        ES: 'El Gnomo',
+        EN: 'The Imp',
+      },
+    };
+  }
+  if (characterFirstName === 'sansa') {
+    return {
+      fullName: 'Sansa Stark',
+      alias: {
+        EN: 'Little Bird',
+        ES: 'Pequeño pajarito',
+      },
+    };
+  }
+  if (characterFirstName === 'jon') {
+    return {
+      fullName: 'Jon Snow',
+      alias: {
+        EN: 'The White Wolf, The Bastard of Winterfell, King Crow',
+        ES: 'Lobo Blanco, El Bastardo de Winterfell, Rey Cuervo',
+      },
+    };
+  }
+  if (characterFirstName === 'cersei') {
+    return {
+      fullName: 'Cersei Lanninster',
+      alias: {
+        EN: 'The Lion, The mother of madness',
+        ES: 'La Leona, La madre de la locura',
+      },
+    };
+  }
+  if (characterFirstName === 'petyr') {
+    return {
+      fullName: 'Petyr Baelish',
+      alias: {
+        EN: 'Little Finger',
+        ES: 'Meñique',
+      },
+    };
+  }
+
   return {
-    main: {
-      ES: `Sos ${characterPositions[5]}`,
-      EN: `You are ${characterPositions[5]}`,
+    fullName: 'Daenerys Targaryen',
+    alias: {
+      ES: 'Dany, Daenerys de la Tormenta, Mhysa, Khaleesi, Madre de Dragones',
+      EN: 'Dany, Daenarys Stormborn, Mhysa, Khaleesi, Mother of Dragons',
     },
-    extra: {
-      ES: `También te podemos decir que ${getDifference().ES} ${
-        characterPositions[4]
-      } y que estás lejos de ser como ${characterPositions[0]}`,
-      EN: `We can also tell you that ${getDifference().EN} ${
-        characterPositions[4]
-      } and that you are far from being like ${characterPositions[0]}`,
-    },
+  };
+};
+
+export const buildResultInfo = (characterPositions = []) => {
+  return {
+    isLike: characterPositions[characterPositions.length - 1],
+    closeTo: characterPositions[characterPositions.length - 2],
+    farFrom: characterPositions[0],
   };
 };
