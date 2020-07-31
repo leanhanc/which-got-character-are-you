@@ -52,7 +52,7 @@ function Postgame({ characterScore, lang }) {
       {isResultDataPresent && shouldShowModal && (
         <Modal>
           <div className="postgame-modal-character-profile">
-            <div className="cpostgame-modal-character-profile__profile-container">
+            <div className="postgame-modal-character-profile__profile-container">
               <h2 className="postgame-modal-character-profile__full-name">{fullName}</h2>
               <figure>
                 {characterProfilePic && (

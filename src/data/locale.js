@@ -60,8 +60,8 @@ export default {
         Sos una persona extremadamente empática, que puede ponerse en el lugar de los más vulnerables.
         No te tiembla el pulso a la hora de impartir justicia. Quizás parezca que a veces se te va la mano y que te dejás llevar por las emociones, ese fuego que llevás adentro y se refleja en tus ojos. \n
         Pero vos sabes que tu corazón esta en el lugar indicado. Querés dejar tu marca haciendo el mundo un lugar más libre y justo.`,
-        dixit: `-La ciudad ya es tuya. A veces es conveniente responderle a la injusticia con piedad \n
-        -Voy a responderle a la injusticia con justicia.`,
+        dixit: `-La ciudad ya es tuya. A veces es conveniente responderle a la injusticia con piedad \n 
+          -Voy a responderle a la injusticia con justicia.`,
       },
       petyr: {
         bio: `Sos Petyr Baelish. Tu ambición no conoce límites, tu astucia tampoco. \n

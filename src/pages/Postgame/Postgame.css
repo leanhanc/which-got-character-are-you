@@ -1,15 +1,19 @@
 .postgame {
   align-items: center;
   background: url('../../assets/images/postgame-background.jpg');
+  background-color: #bbb;
+  background-blend-mode: multiply;
   display: flex;
   height: 100vh;
   justify-content: center;
   position: relative;
   width: 100vw;
 }
+
 .postgame-modal-character-profile {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -18,9 +22,13 @@
   }
 }
 
+.postgame-modal-character-profile__profile-container {
+  flex-basis: 33%;
+}
+
 .postgame-modal-character-profile__full-name {
-  display: inline-block;
   font-family: GameOfThrones;
+  color: #f5f5f5;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.4rem;
@@ -38,11 +46,12 @@
   opacity: 0.7;
   position: relative;
   top: 1rem;
-  width: 175px;
+  min-width: 175px;
+  max-width: 200px;
 }
 
 .postgame-modal-character-profile__caption {
-  color: var(--font-accent-color);
+  color: #f5f5f5;
   font-size: 1.6rem;
   font-style: italic;
   letter-spacing: 1px;
@@ -52,9 +61,10 @@
 }
 
 .postgame-modal-character-profile__bio {
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   font-size: 1.7rem;
   flex-basis: 66%;
+  color: #eee;
 }
 
 .postgame-modal-character-dixit {
@@ -66,5 +76,22 @@
   font-size: 1.5rem;
   font-weight: bold;
   padding-top: 2rem;
+  padding-bottom: 1rem;
   letter-spacing: 1.8px;
+  white-space: pre-line;
+}
+
+.postgame button {
+  border-color: #eee;
+  color: #eeee;
+}
+
+.postgame button:hover {
+  border-color: #eee;
+  color: #eeee;
+}
+
+.postgame button:active {
+  border-color: #eee;
+  color: #eeee;
 }
