@@ -87,6 +87,11 @@ export default {
         dixit: 'A su hijo: Todo aquel que no sea nosotros, es un enemigo',
       },
     },
+    postgame: {
+      youAre: 'Sos ',
+      extraFeedbackLike: 'También podemos decirte que ',
+      extraFeedbackUnLike: ' y que estás lejos de ',
+    },
   },
   EN: {
     preHeader: 'WHICH CHARACTER ARE YOU',
@@ -131,5 +136,10 @@ export default {
         'Money, power and fame.',
       ],
     ],
+    postgame: {
+      youAre: 'You are ',
+      extraFeedbackLike: 'We can also tell you that ',
+      extraFeedbackUnLike: ' and that you are far from being like ',
+    },
   },
 };
