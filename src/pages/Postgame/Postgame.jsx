@@ -45,18 +45,19 @@ function Postgame({ characterScore, lang }) {
 
   return (
     <div id="Postgame" className="postgame">
-      {isResultDataPresent && shouldShowModal && (
-        <Modal>
-          <CharacterProfile
-            alias={alias}
-            characterProfilePic={characterProfilePic}
-            closeModal={closeModal}
-            fullName={fullName}
-            isCharacter={isCharacter}
-            lang={lang}
-          />
-        </Modal>
-      )}
+      <Modal
+        isModalOpen={isResultDataPresent && shouldShowModal}
+        setIsModalOpen={setShouldShowModal}
+      >
+        <CharacterProfile
+          alias={alias}
+          characterProfilePic={characterProfilePic}
+          closeModal={closeModal}
+          fullName={fullName}
+          isCharacter={isCharacter}
+          lang={lang}
+        />
+      </Modal>
     </div>
   );
 }

@@ -41,7 +41,7 @@ function CharacterProfile({ characterProfilePic, fullName, alias, lang, isCharac
 }
 
 CharacterProfile.propTypes = {
-  alias: PropTypes.string.isRequired,
+  alias: PropTypes.object.isRequired,
   characterProfilePic: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   fullName: PropTypes.string.isRequired,
