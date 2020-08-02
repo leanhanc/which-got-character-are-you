@@ -81,18 +81,3 @@
   letter-spacing: 1.8px;
   white-space: pre-line;
 }
-
-.postgame button {
-  border-color: #eee;
-  color: #eeee;
-}
-
-.postgame button:hover {
-  border-color: #eee;
-  color: #eeee;
-}
-
-.postgame button:active {
-  border-color: #eee;
-  color: #eeee;
-}
