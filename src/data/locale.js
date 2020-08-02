@@ -77,7 +77,7 @@ export default {
           Sabés darte gustos, sean o no bien vistos por la moral de tu época.
           Además, que seas racional y un poco hedonista, no significa que no tengas un costado sensible.  Tu corazón siempre está del lado correcto.`,
         dixit:
-          "Es fácil confundir como 'son' las cosas con cómo 'deben' ser, sobretodo si el el cómo 'son' siempre te ha beneficiado",
+          "Es fácil confundir como 'son' las cosas con cómo 'deben' ser, sobretodo si el cómo 'son' siempre te ha beneficiado",
       },
       cersei: {
         bio: `Sos Cersei Lannister. Sos puro fuego.
@@ -91,6 +91,8 @@ export default {
       youAre: 'Sos ',
       extraFeedbackLike: 'También podemos decirte que ',
       extraFeedbackUnLike: ' y que estás lejos de ',
+      restart: 'Rehacer test',
+      shareInTwitter: 'Compartir en Twitter',
     },
   },
   EN: {
@@ -140,6 +142,8 @@ export default {
       youAre: 'You are ',
       extraFeedbackLike: 'We can also tell you that ',
       extraFeedbackUnLike: ' and that you are far from being like ',
+      restart: 'Do test again',
+      shareInTwitter: 'Share in Twitter',
     },
   },
 };

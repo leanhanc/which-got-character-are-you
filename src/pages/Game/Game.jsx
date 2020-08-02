@@ -79,7 +79,7 @@ function Game({ lang, gameStateHandler, answer, step }) {
   }, [answer, navigate]);
 
   return (
-    <section id="Game" className="game">
+    <section id="Game" className="game fade-in">
       <header>
         <h2 className="header-pre-header">{data[lang].preHeader}</h2>
         <h1 className="header-main-header">GAME OF THRONES</h1>

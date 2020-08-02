@@ -12,11 +12,11 @@ function ExtraFeedback({ characterScore, lang, getDifference, isCloseTo, isLike,
 
   return (
     <section className="extra-feedback">
-      <p>
+      <p className="extra-feedback__youAre">
         {data[lang].postgame.youAre}
         <span className="extra-feedback__full-character-name">{isLike}</span>
       </p>
-      <p>
+      <p className="extra-feedback__extraInfo">
         {data[lang].postgame.extraFeedbackLike}
         {similarToExtraFeedback[lang]}
         {isCloseTo}

@@ -2,7 +2,7 @@
   font-size: 3rem;
   font-weight: bolder;
   line-height: 2;
-  max-width: 920px;
+  max-width: 600px;
   text-align: center;
 }
 
@@ -12,4 +12,9 @@
   font-weight: bold;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
+}
+
+.extra-feedback__extraInfo {
+  font-size: 2.2rem;
+  color: var(--font-accent-color);
 }

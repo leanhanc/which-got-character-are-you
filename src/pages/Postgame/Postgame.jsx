@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+// Hooks
+import { useNavigate } from 'react-router-dom';
+
 // Components
-import { CharacterProfile, Modal, ExtraFeedback } from './components';
+import { CharacterProfile, Modal, ExtraFeedback, NavButtons } from './components';
 
 // Helpers
 import {
@@ -12,10 +15,16 @@ import {
   getFullCharacterInfo,
 } from './Postgame.helpers';
 
+// Actions
+import { gameActions } from '../../reducers/game';
+
 // Styles
 import './Postgame.css';
 
-function Postgame({ characterScore, lang }) {
+function Postgame({ characterScore, lang, gameStateHandler }) {
+  // Hooks
+  const navigate = useNavigate();
+
   // Local State
   const [shouldShowModal, setShouldShowModal] = useState(true);
   const [isCharacter, setIsCharacter] = useState('');
@@ -34,6 +43,10 @@ function Postgame({ characterScore, lang }) {
 
   // Handlers
   const closeModal = () => setShouldShowModal(false);
+  const restartGame = () => {
+    gameStateHandler({ type: gameActions.RESET });
+    navigate('/game');
+  };
 
   // Effects
   useEffect(() => {
@@ -47,7 +60,7 @@ function Postgame({ characterScore, lang }) {
   }, []);
 
   return (
-    <div id="Postgame" className="postgame">
+    <section id="Postgame" className="postgame fade-in">
       <ExtraFeedback
         characterScore={characterScore}
         getDifference={getDifference}
@@ -69,12 +82,14 @@ function Postgame({ characterScore, lang }) {
           lang={lang}
         />
       </Modal>
-    </div>
+      <NavButtons lang={lang} restartGame={restartGame} />
+    </section>
   );
 }
 
 Postgame.propTypes = {
   characterScore: PropTypes.object.isRequired,
+  gameStateHandler: PropTypes.func.isRequired,
   lang: PropTypes.string.isRequired,
 };
 

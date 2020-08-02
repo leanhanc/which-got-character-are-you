@@ -39,7 +39,13 @@ function Router({
         />
         <Route
           path="/postgame"
-          element={<Postgame characterScore={characterScore} lang={lang} />}
+          element={
+            <Postgame
+              characterScore={characterScore}
+              gameStateHandler={gameStateHandler}
+              lang={lang}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
