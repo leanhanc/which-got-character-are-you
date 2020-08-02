@@ -2,12 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import { CharacterProfile, Modal } from './components';
+import { CharacterProfile, Modal, ExtraFeedback } from './components';
 
 // Helpers
 import {
   calculateCharacterPositions,
   buildResultInfo,
+  getDifference,
   getFullCharacterInfo,
 } from './Postgame.helpers';
 
@@ -27,7 +28,9 @@ function Postgame({ characterScore, lang }) {
 
   // Helpers
   const isResultDataPresent = Boolean(isCharacter && isCloseTo && isFarFrom);
-  const { fullName, alias } = getFullCharacterInfo(isCharacter);
+  const { fullName: isLikeFullCharacterName, alias } = getFullCharacterInfo(isCharacter);
+  const { fullName: isCloseToFullCharacterName } = getFullCharacterInfo(isCloseTo);
+  const { fullName: isFarFromFullCharacterName } = getFullCharacterInfo(isFarFrom);
 
   // Handlers
   const closeModal = () => setShouldShowModal(false);
@@ -45,6 +48,14 @@ function Postgame({ characterScore, lang }) {
 
   return (
     <div id="Postgame" className="postgame">
+      <ExtraFeedback
+        characterScore={characterScore}
+        getDifference={getDifference}
+        isCloseTo={isCloseToFullCharacterName}
+        isFarFrom={isFarFromFullCharacterName}
+        isLike={isLikeFullCharacterName}
+        lang={lang}
+      />
       <Modal
         isModalOpen={isResultDataPresent && shouldShowModal}
         setIsModalOpen={setShouldShowModal}
@@ -53,7 +64,7 @@ function Postgame({ characterScore, lang }) {
           alias={alias}
           characterProfilePic={characterProfilePic}
           closeModal={closeModal}
-          fullName={fullName}
+          fullName={isLikeFullCharacterName}
           isCharacter={isCharacter}
           lang={lang}
         />
