@@ -88,6 +88,10 @@ li {
   padding: 0;
 }
 
+li {
+  list-style: none;
+}
+
 /* Headers */
 
 .header-pre-header {
