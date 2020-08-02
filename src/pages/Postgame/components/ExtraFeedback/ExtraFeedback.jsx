@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Locale
 import data from '../../../../data/locale';
+
+// Styles
+import './ExtraFeedback.css';
 
 function ExtraFeedback({ characterScore, lang, getDifference, isCloseTo, isLike, isFarFrom }) {
   const similarToExtraFeedback = getDifference(characterScore);
 
   return (
-    <div className="extra-feedback">
+    <section className="extra-feedback">
       <p>
         {data[lang].postgame.youAre}
         <span className="extra-feedback__full-character-name">{isLike}</span>
@@ -19,7 +23,7 @@ function ExtraFeedback({ characterScore, lang, getDifference, isCloseTo, isLike,
         {data[lang].postgame.extraFeedbackUnLike}
         {isFarFrom}
       </p>
-    </div>
+    </section>
   );
 }
 
