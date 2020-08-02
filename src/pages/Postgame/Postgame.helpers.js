@@ -53,7 +53,7 @@ export const getFullCharacterInfo = (characterFirstName = '') => {
   }
   if (characterFirstName === 'cersei') {
     return {
-      fullName: 'Cersei Lanninster',
+      fullName: 'Cersei Lannister',
       alias: {
         EN: 'The Lion, The mother of madness',
         ES: 'La Leona, La madre de la locura',
