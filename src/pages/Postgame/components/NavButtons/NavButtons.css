@@ -1,0 +1,17 @@
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 1rem;
+}
+
+li.nav-button > button {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 220px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}

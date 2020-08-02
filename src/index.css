@@ -209,9 +209,9 @@ li {
 }
 
 .fade-in {
-  animation: fadeIn 0.5s;
+  animation: fadeIn 1s;
 }
 
 .fade-out {
-  animation: fadeOut 0.5s;
+  animation: fadeOut 1s;
 }

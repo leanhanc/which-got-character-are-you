@@ -81,3 +81,18 @@
   letter-spacing: 1.8px;
   white-space: pre-line;
 }
+
+.modal-body button {
+  border-color: #eee;
+  color: #eeee;
+}
+
+.modal-body button:hover {
+  border-color: #eee;
+  color: #eeee;
+}
+
+.modal-body button:active {
+  border-color: #eee;
+  color: #eeee;
+}
