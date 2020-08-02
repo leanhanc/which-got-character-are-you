@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import { Modal } from './components';
-import { OptionButton } from '../../components';
+import { CharacterProfile, Modal } from './components';
 
 // Helpers
 import {
@@ -11,9 +10,6 @@ import {
   buildResultInfo,
   getFullCharacterInfo,
 } from './Postgame.helpers';
-
-// Locale
-import data from '../../data/locale';
 
 // Styles
 import './Postgame.css';
@@ -51,32 +47,14 @@ function Postgame({ characterScore, lang }) {
     <div id="Postgame" className="postgame">
       {isResultDataPresent && shouldShowModal && (
         <Modal>
-          <div className="postgame-modal-character-profile">
-            <div className="postgame-modal-character-profile__profile-container">
-              <h2 className="postgame-modal-character-profile__full-name">{fullName}</h2>
-              <figure>
-                {characterProfilePic && (
-                  <img
-                    src={characterProfilePic}
-                    alt={fullName}
-                    className="postgame-modal-character-profile__pic"
-                  />
-                )}
-                <figcaption className="postgame-modal-character-profile__caption">
-                  {alias[lang]}
-                </figcaption>
-              </figure>
-            </div>
-            <div className="postgame-modal-character-profile__bio">
-              {data[lang].character[isCharacter].bio}
-            </div>
-          </div>
-          <blockquote className="postgame-modal-character-dixit">
-            "{data[lang].character[isCharacter].dixit}"
-          </blockquote>
-          <OptionButton variant="secondary" onClick={closeModal}>
-            CONTINUAR
-          </OptionButton>
+          <CharacterProfile
+            alias={alias}
+            characterProfilePic={characterProfilePic}
+            closeModal={closeModal}
+            fullName={fullName}
+            isCharacter={isCharacter}
+            lang={lang}
+          />
         </Modal>
       )}
     </div>
