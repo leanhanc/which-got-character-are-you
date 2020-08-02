@@ -1,9 +1,10 @@
 .postgame {
   align-items: center;
-  background: url('../../assets/images/postgame-background.jpg');
-  background-color: #bbb;
   background-blend-mode: multiply;
+  background-color: #bbb;
+  background: url('../../assets/images/postgame-background.jpg');
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   position: relative;
