@@ -138,6 +138,66 @@ export default {
         'Money, power and fame.',
       ],
     ],
+    character: {
+      sansa: {
+        bio: `You are young Sansa Stark. Yo are a candid person, a dreamer and a bit innocent. 
+        This characteristics sometimes result in being disappointed by a world that many times that seems too dark and hard for you to deal with.
+        You are not interestest in politics and think that those that get involved in it are usually dishonest and a bit wicked.
+        You enjoy aestethics and also enjoy being liked by other people, leading people to believe you are too shallow. But you ignore them because you know that there is nothing better than gentleness and beauty to 
+        counter the violence and darkness in this world.`,
+        dixit: 'King Joffrey will come back. The worst ones always live.',
+      },
+      jon: {
+        bio: `
+        You are Jon Snow. The personal values more important to you are honesty and honourability. You practice stoicisism and have a huge sense of duty and self-sacrifice. \n
+        Some see naiveness in your deeds, they say trusting people get you into trouble, but wheter or not that is accurate you know very well that you do it because you expect everybody to be held to the same standards you impose to yourself--always giving it all for the people you care about without complaints and without asking anything in return.`,
+        dixit: `I've sworn allegiance to the Night's Watch. If I don't keep my word, what kind of king would I be?`,
+      },
+      daenerys: {
+        bio: `You are Daenerys Targaryien, aka Daenarys Stormborn, aka Khalessi, aka Mother of Dragons, or just Dany. \n 
+        You care a lot about loyalty and you are demanding of your friends. You expect them to go the extra mile for you as you do for them. \n
+        You are an extremely empathic person. You are able to put yourself in the shoes those who are vulnerable. \n 
+        You don't hesitate to dispense justice. It may seem at times that you get carried away, that you let emotions-- that fire you carry 
+        inside and it's reflected in your eyes get to you. But you know your heart is in the right place. You want to leave your mark and make the world more free and fair.`,
+        dixit: `-The city is yours. Sometimes is better to answer injustice with mercy \n
+      -I will anwser injustice with justice`,
+      },
+      petyr: {
+        bio: `You are Petyr Baelish. Your ambition is limitless and your cunningness is too. 
+        You know life is nothing but a game and even if they knock you down sometimes along the way you always get up and 
+        persevere until you achieve your goals. You come from behind to take it all. \n
+        You have the ability to read people and anticipate their every move.\n
+        Some see you as a selfish and shameless person, but you don't listen and keep doing your thing
+        because you are sure that the man is a wolf to man. You trust no one and you don't expect anyone to trust you either.
+        `,
+        dixit:
+          'Sometimes when I try to understand a person’s motives I play a little game. I assume the worst.',
+      },
+      tyrion: {
+        bio: `You are Tyrion Lannister. You are emphatic, enlightened and wise. You always say the right thing. 
+        You excel at giving your friends good advice. \n
+        Although this sounds like a stereotype intellectual, you are not. You know that life isn't any good if
+        one can't surrender to its pleasures whether or not some of those are frowned upon by the morals of your time.
+         You know how to indulge yourself. \n
+        Furthermore, the fact that you are rational and bit hedonist doesn't mean that you don't have a sensitive side. \n
+        Your heart is always in the right place.
+        `,
+        dixit:
+          "It's easy to confuse ‘what is’ with ‘what ought to be,’ especially when ‘what is’ has worked out in your favor.",
+      },
+      cersei: {
+        bio: `You are Cersei Lannister. You are pure fire. \n
+        You have the ability to give shelter in your hearth the same doses of love for your family
+        as of hate to those who dared to hurt you.
+        You make sure that there is no aggression that goes without retribution, sometimes inflicting twice as pain
+        in your enemies compared to what they caused you. \n
+        Your family is the only thing that matters to you in this world, you couldn't care less about the rest. \n
+        Some say that you are spiteful, event hateful, but you don't listen to the words of mediocre individuals. Most of the time
+        those are just people from the pleb. You just look at them over your shoulders and offer them your best face of disgust.\n
+        `,
+        dixit: "To his son: Everyone who isn't us is an enemy",
+      },
+    },
     postgame: {
       youAre: 'You are ',
       extraFeedbackLike: 'We can also tell you that ',
