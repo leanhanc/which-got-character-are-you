@@ -26,9 +26,10 @@ function CharacterProfile({ characterProfilePic, fullName, alias, lang, isCharac
             </figcaption>
           </figure>
         </div>
-        <div className="postgame-modal-character-profile__bio">
-          {data[lang].character[isCharacter].bio}
-        </div>
+        <div
+          className="postgame-modal-character-profile__bio"
+          dangerouslySetInnerHTML={{ __html: data[lang].character[isCharacter].bio }}
+        />
       </div>
       <blockquote className="postgame-modal-character-dixit">
         "{data[lang].character[isCharacter].dixit}"
