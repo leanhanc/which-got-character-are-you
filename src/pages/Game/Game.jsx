@@ -89,7 +89,7 @@ function Game({ lang, gameStateHandler, answer, step }) {
         currentAnswerText={currentAnswerText ?? ''}
         currentQuestionText={currentQuestionText ?? ''}
       />
-      <ButtonPanel handleUserAnswer={handleUserAnswer} />
+      <ButtonPanel handleUserAnswer={handleUserAnswer} lang={lang} />
       <Line className="game-progress-bar" strokeColor="#a06906" percent={currentGameProgress} />
     </section>
   );
