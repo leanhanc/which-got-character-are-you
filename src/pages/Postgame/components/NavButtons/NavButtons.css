@@ -1,17 +1,19 @@
 .nav-buttons {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  align-items: center;
-  justify-content: center;
   height: 200px;
+  justify-content: center;
   padding: 1rem;
 }
 
 li.nav-button > button {
-  text-transform: uppercase;
-  font-weight: bold;
-  width: 220px;
+  border-color: #eee;
+  color: #eee;
   font-size: 1.2rem;
+  font-weight: bold;
   line-height: 1.7;
+  text-transform: uppercase;
+  width: 220px;
 }
