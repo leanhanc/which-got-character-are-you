@@ -12,6 +12,9 @@ function ExtraFeedback({ characterScore, lang, getDifference, isCloseTo, isLike,
 
   return (
     <section className="extra-feedback">
+      <header>
+        <h3 className="extra-feedback__header">GAME OF THRONES</h3>
+      </header>
       <p className="extra-feedback__youAre">
         {data[lang].postgame.youAre}
         <span className="extra-feedback__full-character-name">{isLike}</span>

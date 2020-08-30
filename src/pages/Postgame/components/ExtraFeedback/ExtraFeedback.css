@@ -1,9 +1,17 @@
 .extra-feedback {
   color: #eee;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bolder;
   line-height: 2;
   max-width: 600px;
+  text-align: center;
+}
+
+.extra-feedback__header {
+  font-family: GameOfThrones;
+  font-size: 4.8rem;
+  font-weight: lighter;
+  letter-spacing: 0.4rem;
   text-align: center;
 }
 
