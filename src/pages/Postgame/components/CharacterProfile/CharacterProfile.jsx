@@ -7,6 +7,9 @@ import data from '../../../../data/locale';
 // Components
 import { OptionButton } from '../../../../components';
 
+// Enums
+import { LANG } from '../../../../utils/enums';
+
 function CharacterProfile({ characterProfilePic, fullName, alias, lang, isCharacter, closeModal }) {
   return (
     <>
@@ -35,7 +38,7 @@ function CharacterProfile({ characterProfilePic, fullName, alias, lang, isCharac
         "{data[lang].character[isCharacter].dixit}"
       </blockquote>
       <OptionButton variant="secondary" onClick={closeModal}>
-        CONTINUAR
+        {lang === LANG.EN ? 'CONTINUE' : 'CONTINUAR'}
       </OptionButton>
     </>
   );
