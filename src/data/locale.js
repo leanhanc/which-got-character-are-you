@@ -150,15 +150,15 @@ export default {
       jon: {
         bio: `
         You are Jon Snow. The personal values more important to you are honesty and honourability. You practice stoicisism and have a huge sense of duty and self-sacrifice. <br>
-        Some see naiveness in your deeds, they say trusting people get you into trouble, but wheter or not that is accurate you know very well that you do it because you expect everybody to be held to the same standards you impose to yourself--always giving it all for the people you care about without complaints and without asking anything in return.`,
+        Some see naiveness in your deeds, they say trusting people get you into trouble, but wheter or not that is accurate you know very well that you do it because you expect everybody to be held to the same standards you impose to yourself: always giving it all for the people you care about without complaints and without asking anything in return.`,
         dixit: `I've sworn allegiance to the Night's Watch. If I don't keep my word, what kind of king would I be?`,
       },
       daenerys: {
         bio: `You are Daenerys Targaryien, aka Daenarys Stormborn, aka Khalessi, aka Mother of Dragons, or just Dany. <br> 
         You care a lot about loyalty and you are demanding of your friends. You expect them to go the extra mile for you as you do for them. <br>
         You are an extremely empathic person. You are able to put yourself in the shoes those who are vulnerable. <br> 
-        You don't hesitate to dispense justice. It may seem at times that you get carried away, that you let emotions-- that fire you carry 
-        inside and it's reflected in your eyes get to you. But you know your heart is in the right place. You want to leave your mark and make the world more free and fair.`,
+        You don't hesitate to dispense justice. It may seem at times that you get carried away, that you let emotions (that fire you carry 
+        inside) and it's reflected in your eyes get to you. But you know your heart is in the right place. You want to leave your mark and make the world more free and fair.`,
         dixit: `-The city is yours. Sometimes is better to answer injustice with mercy <br>
       -I will anwser injustice with justice`,
       },
