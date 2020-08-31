@@ -5,7 +5,7 @@
   gap: 4rem;
   height: 200px;
   justify-content: center;
-  padding: 1rem;
+  margin-bottom: 2rem;
 }
 
 li.nav-button > button {

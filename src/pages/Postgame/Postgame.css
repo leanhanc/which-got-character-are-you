@@ -3,12 +3,12 @@
   background-blend-mode: multiply;
   background-color: #bbb;
   background: url('../../assets/images/postgame-background.jpg');
+  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   position: relative;
-  width: 100vw;
 }
 
 .postgame-modal-character-profile {
@@ -20,6 +20,18 @@
 @media screen and (min-width: 768px) {
   .postgame-modal-character-profile {
     flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .postgame {
+    padding: 4rem;
+  }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .postgame {
+    height: 100%;
   }
 }
 
@@ -47,7 +59,6 @@
   opacity: 0.7;
   position: relative;
   top: 1rem;
-  min-width: 175px;
   max-width: 200px;
 }
 

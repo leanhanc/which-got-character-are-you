@@ -61,14 +61,16 @@ function Postgame({ characterScore, lang, gameStateHandler }) {
 
   return (
     <section id="Postgame" className="postgame fade-in">
-      <ExtraFeedback
-        characterScore={characterScore}
-        getDifference={getDifference}
-        isCloseTo={isCloseToFullCharacterName}
-        isFarFrom={isFarFromFullCharacterName}
-        isLike={isLikeFullCharacterName}
-        lang={lang}
-      />
+      {!shouldShowModal && (
+        <ExtraFeedback
+          characterScore={characterScore}
+          getDifference={getDifference}
+          isCloseTo={isCloseToFullCharacterName}
+          isFarFrom={isFarFromFullCharacterName}
+          isLike={isLikeFullCharacterName}
+          lang={lang}
+        />
+      )}
       <Modal
         isModalOpen={isResultDataPresent && shouldShowModal}
         setIsModalOpen={setShouldShowModal}
@@ -82,7 +84,7 @@ function Postgame({ characterScore, lang, gameStateHandler }) {
           lang={lang}
         />
       </Modal>
-      <NavButtons lang={lang} restartGame={restartGame} />
+      {!shouldShowModal && <NavButtons lang={lang} restartGame={restartGame} />}
     </section>
   );
 }
