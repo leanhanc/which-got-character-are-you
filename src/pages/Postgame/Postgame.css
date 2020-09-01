@@ -29,12 +29,6 @@
   }
 }
 
-@media screen and (max-height: 600px) and (orientation: landscape) {
-  .postgame {
-    height: 100%;
-  }
-}
-
 .postgame-modal-character-profile__profile-container {
   flex-basis: 33%;
 }

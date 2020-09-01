@@ -6,6 +6,7 @@
   width: 100vw;
   top: 0;
   height: 100%;
+  min-height: 320px;
   z-index: 100;
 }
 
@@ -28,6 +29,12 @@
     width: 640px;
     max-height: calc(100vh - 200px);
     border-radius: 1rem;
+  }
+}
+
+@media screen and (min-height: 1200px) {
+  .modal {
+    height: auto;
   }
 }
 
