@@ -1,24 +1,23 @@
+.extra-feedback__header {
+  font-family: GameOfThrones;
+  font-size: 4rem;
+  font-weight: lighter;
+  letter-spacing: 0.4rem;
+  text-align: center;
+}
+
 .extra-feedback {
   color: #eee;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: bolder;
   line-height: 2;
   max-width: 600px;
   text-align: center;
 }
 
-.extra-feedback__header {
-  font-family: GameOfThrones;
-  font-size: 4.4rem;
-  font-weight: lighter;
-  letter-spacing: 0.4rem;
-  text-align: center;
-}
-
 .extra-feedback__full-character-name {
   color: var(--primary-dark-color);
-  font-family: Cinzel-Regular;
-  font-weight: bold;
+  font-family: Cinzel-Bold;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
@@ -26,4 +25,8 @@
 .extra-feedback__extraInfo {
   color: #eee;
   font-size: 2.2rem;
+}
+
+.extra-feedback__extraInfoName {
+  color: var(--primary-color);
 }

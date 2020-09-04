@@ -34,6 +34,11 @@
 }
 
 @font-face {
+  font-family: 'Cinzel-Black';
+  src: local('CinzelBlack'), url('./assets/fonts/Cinzel/CinzelBlack.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'GameOfThrones';
   src: local('GameOfThrones'),
     url('./assets/fonts/GameOfThrones/GameOfThronesRegular.ttf') format('truetype');

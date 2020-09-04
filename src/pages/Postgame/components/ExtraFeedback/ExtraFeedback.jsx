@@ -22,9 +22,9 @@ function ExtraFeedback({ characterScore, lang, getDifference, isCloseTo, isLike,
       <p className="extra-feedback__extraInfo">
         {data[lang].postgame.extraFeedbackLike}
         {similarToExtraFeedback[lang]}
-        {isCloseTo}
+        <span className="extra-feedback__extraInfoName">{isCloseTo}</span>
         {data[lang].postgame.extraFeedbackUnLike}
-        {isFarFrom}
+        <span className="extra-feedback__extraInfoName">{isFarFrom}</span>
       </p>
     </section>
   );
