@@ -18,6 +18,9 @@ import {
 // Actions
 import { gameActions } from '../../reducers/game';
 
+// Locale
+import data from '../../data/locale';
+
 // Styles
 import './Postgame.css';
 
@@ -43,9 +46,24 @@ function Postgame({ characterScore, lang, gameStateHandler }) {
 
   // Handlers
   const closeModal = () => setShouldShowModal(false);
+
   const restartGame = () => {
     gameStateHandler({ type: gameActions.RESET });
     navigate('/game');
+  };
+
+  const shareInTwitter = () => {
+    const p1 = encodeURIComponent(data[lang].postgame.shareP1);
+    const p2 = encodeURIComponent(data[lang].postgame.shareP2);
+    const p3 = window.location.origin;
+
+    const twitterWindow = window.open(
+      `https://twitter.com/intent/tweet?text=${p1}${isLikeFullCharacterName}${p2}${p3}`,
+    );
+
+    if (twitterWindow.focus) {
+      twitterWindow.focus();
+    }
   };
 
   // Effects
@@ -84,7 +102,9 @@ function Postgame({ characterScore, lang, gameStateHandler }) {
           lang={lang}
         />
       </Modal>
-      {!shouldShowModal && <NavButtons lang={lang} restartGame={restartGame} />}
+      {!shouldShowModal && (
+        <NavButtons lang={lang} restartGame={restartGame} share={shareInTwitter} />
+      )}
     </section>
   );
 }

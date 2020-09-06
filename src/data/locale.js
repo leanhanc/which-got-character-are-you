@@ -93,6 +93,8 @@ export default {
       extraFeedbackUnLike: ' y que estás lejos de ',
       restart: 'Rehacer test',
       shareInTwitter: 'Compartir en Twitter',
+      shareP1: 'Hice el test para saber qué personaje de #GOT soy y me salió ',
+      shareP2: '. Podés hacerlo en: ',
     },
   },
   EN: {
@@ -204,6 +206,8 @@ export default {
       extraFeedbackUnLike: ' and that you are far from being like ',
       restart: 'Do test again',
       shareInTwitter: 'Share in Twitter',
+      shareP1: 'I did a test to find out which #GOT character I am and I got ',
+      shareP2: '. You can do it here: ',
     },
   },
 };

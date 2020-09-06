@@ -10,14 +10,14 @@ import { OptionButton } from '../../../../components';
 // Styles
 import './NavButtons.css';
 
-function NavButtons({ lang, restartGame }) {
+function NavButtons({ lang, restartGame, share }) {
   return (
     <ul className="nav-buttons">
       <li className="nav-button">
         <OptionButton onClick={restartGame}>{data[lang].postgame.restart}</OptionButton>
       </li>
       <li className="nav-button">
-        <OptionButton>{data[lang].postgame.shareInTwitter}</OptionButton>
+        <OptionButton onClick={share}>{data[lang].postgame.shareInTwitter}</OptionButton>
       </li>
     </ul>
   );
@@ -26,6 +26,7 @@ function NavButtons({ lang, restartGame }) {
 NavButtons.propTypes = {
   lang: PropTypes.string.isRequired,
   restartGame: PropTypes.func.isRequired,
+  share: PropTypes.func.isRequired,
 };
 
 export default NavButtons;
