@@ -1,20 +1,16 @@
-# ¿Quién sos en Game Of Thrones?
+# Which Game of Thrones character are you?
 
-Se te van a hacer cuatro preguntas y, dependendiendo del grado de acuerdo que manifiestes con cada una, recibirás el personaje de <i>Game of Thrones</i>
-al que más te parecés en personalidad y filosofía.
-El resultado luego puede ser compartido directamente en Twitter y/o Facebook.
+The app asks you four questions and depending the degree of agreement you declare you get the <i>Game of Thrones</i> character that resembles you the most
+both in personality and personal philosophy.
+The result can be then shared in Twitter.
 
-## Ejecutar online
+## Online demo
 
-Para hacer el test, hacé <a href="http://test-got.now.sh" target="_blank" >clic acá</a>
+You can take the test [here](http://test-got.now.sh).
 
-## Ejecutar localmente
+## Develop
 
-```
-Descargá el repositorio
-```
-
-Dentro del directorio donde se desargó el repositorio ejecutá en consola
+[Node](https://nodejs.org/en/download/) is required to be installed in your OS to run the development server.
 
 ```
 npm run install
@@ -24,14 +20,14 @@ npm run install
 npm run start
 ```
 
-Luego accedé con el navegador en `http://localhost:3000/`
+The app will run at http://localhost:3000/
 
 ## Tests
 
 ```
-npm run start
+npm run test
 ```
 
-## Licencia
+## License
 
-MIT - ver [LICENSE.md](LICENSE.MD)
+MIT - [LICENSE.md](LICENSE.MD)
